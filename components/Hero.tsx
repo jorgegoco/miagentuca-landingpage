@@ -15,10 +15,18 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-navy-800 border border-navy-700 text-electric-400 text-xs font-semibold tracking-wide mb-6">
-            <Sparkles className="w-3 h-3" />
-            <span>ESPECIALIZADO EN PYMES DE CANTABRIA</span>
-          </div>
+          {/* High Visibility CTA at the top */}
+          <a 
+            href="mailto:jorgegoco70@gmail.com"
+            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-electric-900/40 border border-electric-500 text-white text-sm font-bold tracking-wide mb-8 hover:bg-electric-600/20 hover:scale-105 transition-all cursor-pointer group shadow-[0_0_20px_rgba(56,189,248,0.2)]"
+          >
+             <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+            </span>
+            <span className="group-hover:text-electric-300 transition-colors">SOLICITAR AUDITORÍA GRATUITA</span>
+            <ArrowRight className="w-4 h-4 text-electric-400 group-hover:translate-x-1 transition-transform" />
+          </a>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Deja de hacer de robot. <br />
@@ -27,30 +35,17 @@ const Hero: React.FC = () => {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-16 leading-relaxed">
             Implemento Agentes de IA que gestionan procesos completos en tu empresa: 
             desde reclamar facturas hasta comparar presupuestos. Funcionan 24/7, 
             no se cansan y no cometen errores.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#agentes"
-              className="w-full sm:w-auto px-8 py-4 bg-electric-600 text-white text-base font-bold rounded-xl shadow-lg shadow-electric-500/25 hover:bg-electric-500 hover:shadow-electric-500/40 transition-all flex items-center justify-center gap-2"
-            >
-              Ver cómo funcionan
-              <ArrowRight className="w-5 h-5" />
-            </a>
-            <a
-              href="#sobre-mi"
-              className="w-full sm:w-auto px-8 py-4 bg-navy-800 text-slate-200 border border-navy-700 text-base font-semibold rounded-xl hover:bg-navy-700 transition-all"
-            >
-              Conocer al consultor
-            </a>
-          </div>
-
-          <div className="mt-12 text-sm text-slate-500 font-medium">
-            "No vendemos software, vendemos tiempo."
+          <div className="relative inline-block">
+             <div className="absolute -inset-1 bg-electric-500/20 blur-xl rounded-full"></div>
+             <p className="relative text-xl md:text-2xl font-medium text-slate-300 italic tracking-wide">
+              "No vendemos software, <span className="text-electric-400 font-bold drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">vendemos tiempo</span>."
+            </p>
           </div>
         </motion.div>
       </div>

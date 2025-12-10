@@ -32,8 +32,8 @@ const Navbar: React.FC = () => {
           <div className="p-2 bg-electric-600 rounded-lg group-hover:bg-electric-500 transition-colors">
             <Cpu className="w-5 h-5 text-white" />
           </div>
-          <span className={`font-bold text-xl tracking-tight ${isScrolled ? 'text-white' : 'text-slate-900 lg:text-white'}`}>
-            Jorge González <span className="text-electric-400">| IA</span>
+          <span className="font-bold text-xl tracking-tight text-white">
+            miagentuca.es
           </span>
         </a>
 
@@ -43,19 +43,11 @@ const Navbar: React.FC = () => {
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-electric-400 ${
-                isScrolled ? 'text-slate-300' : 'text-slate-300'
-              }`}
+              className="text-sm font-medium text-slate-300 transition-colors hover:text-electric-400"
             >
               {link.name}
             </a>
           ))}
-          <a
-            href="mailto:jorgegoco70@gmail.com"
-            className="px-5 py-2.5 bg-electric-600 text-white text-sm font-semibold rounded-lg hover:bg-electric-500 transition-all hover:shadow-[0_0_15px_rgba(56,189,248,0.5)]"
-          >
-            Solicitar Auditoría
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -87,12 +79,6 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-              <a
-                href="mailto:jorgegoco70@gmail.com"
-                className="block text-center w-full px-5 py-3 bg-electric-600 text-white font-semibold rounded-lg hover:bg-electric-500"
-              >
-                Solicitar Auditoría
-              </a>
             </div>
           </motion.div>
         )}
