@@ -13,7 +13,9 @@ const Footer: React.FC = () => {
           
           <div className="text-center md:text-left">
             <h3 className="text-white font-bold text-lg mb-1">Jorge González</h3>
-            <p className="text-sm">Santander, 2025</p>
+            <p className="text-sm text-slate-500">
+              Consultoría de IA Agéntica en <span className="text-slate-400">Santander, Cantabria</span>.
+            </p>
           </div>
 
           <div className="flex items-center gap-6">
@@ -45,7 +47,7 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="mt-8 pt-8 border-t border-navy-800 text-center text-xs text-slate-600">
-          &copy; {new Date().getFullYear()} Jorge González. Todos los derechos reservados.
+          &copy; {new Date().getFullYear()} Jorge González. Todos los derechos reservados. | Servicios en España.
         </div>
       </div>
     </footer>

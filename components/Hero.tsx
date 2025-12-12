@@ -1,8 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-const Hero: React.FC = () => {
+interface HeroProps {
+  onOpenModal: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-navy-900">
       {/* Background Gradients */}
@@ -15,9 +19,9 @@ const Hero: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* High Visibility CTA at the top */}
-          <a 
-            href="mailto:jorgegoco70@gmail.com"
+          {/* High Visibility CTA at the top - now triggers Modal */}
+          <button 
+            onClick={onOpenModal}
             className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-electric-900/40 border border-electric-500 text-white text-sm font-bold tracking-wide mb-8 hover:bg-electric-600/20 hover:scale-105 transition-all cursor-pointer group shadow-[0_0_20px_rgba(56,189,248,0.2)]"
           >
              <span className="relative flex h-3 w-3">
@@ -26,7 +30,7 @@ const Hero: React.FC = () => {
             </span>
             <span className="group-hover:text-electric-300 transition-colors">SOLICITAR AUDITORÍA GRATUITA</span>
             <ArrowRight className="w-4 h-4 text-electric-400 group-hover:translate-x-1 transition-transform" />
-          </a>
+          </button>
           
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Deja de hacer de robot. <br />
