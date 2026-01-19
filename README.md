@@ -14,6 +14,12 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
 - **Purchasing Agents** - Procurement optimization for construction
 - **Calendar/Scheduling Agents** - 24/7 virtual secretary services
 
+### Key Features
+
+- **3-Layer Methodology Section** - Explains the architecture that makes AI agents reliable (Directivas, Orquestacion, Ejecucion)
+- **FAQ Section** - Accordion-style answers to common questions
+- **Static Blog** - SEO-optimized articles about AI agents and methodology
+
 ## 🛠️ Technology Stack
 
 - **React 19** - Modern UI library
@@ -72,12 +78,18 @@ miagentuca-landingpage/
 │   ├── Navbar.tsx
 │   ├── Hero.tsx
 │   ├── ShiftSection.tsx
+│   ├── MethodologySection.tsx  # 3-layer architecture explanation
 │   ├── AgentsSection.tsx
 │   ├── AudienceSection.tsx
+│   ├── FAQSection.tsx          # Accordion FAQ
 │   ├── AboutSection.tsx
 │   ├── Footer.tsx
 │   └── ContactModal.tsx
 ├── public/              # Static assets
+│   ├── blog/            # Static blog articles
+│   │   ├── index.html
+│   │   ├── por-que-los-agentes-ia-fallan.html
+│   │   └── arquitectura-3-capas-explicada.html
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   ├── CNAME
@@ -127,12 +139,13 @@ This builds the project and pushes to the `gh-pages` branch.
 ## 🌍 SEO Features
 
 - **Local SEO optimized** for Santander and Cantabria
-- **Schema.org JSON-LD** structured data
+- **Schema.org JSON-LD** structured data (ProfessionalService, FAQPage, Article)
 - **Open Graph** and Twitter Card meta tags
 - **Geo-tagging** for local search priority
 - **AI-friendly** metadata (Google-Extended, GPTBot allowed)
 - **Mobile-responsive** design
 - **HTTPS** with automatic SSL certificate
+- **Static blog** with Article schema for rich search results
 
 ## 📧 Contact Form
 
