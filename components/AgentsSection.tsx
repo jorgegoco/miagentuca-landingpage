@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FileCheck, ShoppingCart, Calendar } from 'lucide-react';
+import { FileCheck, ShoppingCart, Calendar, Cog } from 'lucide-react';
 
 const agents = [
   {
@@ -8,21 +8,24 @@ const agents = [
     subtitle: "Para Gestorías",
     icon: <FileCheck className="w-8 h-8 text-white" />,
     description: "No solo clasifica documentos. Revisa si faltan datos, escribe al cliente para reclamarlos y valida la información fiscal antes de que tú abras el archivo.",
-    gradient: "from-blue-500 to-indigo-600"
+    gradient: "from-blue-500 to-indigo-600",
+    methodology: "Directivas claras + decisiones inteligentes + ejecucion confiable"
   },
   {
     title: "El Agente de Compras",
     subtitle: "Para Construcción/Reformas",
     icon: <ShoppingCart className="w-8 h-8 text-white" />,
     description: "Recibe listas de materiales, pide ofertas a tus proveedores habituales, compara precios y te presenta un Excel listo para aprobar la compra más rentable.",
-    gradient: "from-cyan-500 to-blue-600"
+    gradient: "from-cyan-500 to-blue-600",
+    methodology: "Directivas claras + decisiones inteligentes + ejecucion confiable"
   },
   {
     title: "El Agente de Agenda",
     subtitle: "Atención 24/7",
     icon: <Calendar className="w-8 h-8 text-white" />,
     description: "Atiende peticiones por email/WhatsApp, consulta tu disponibilidad real, agenda reuniones y persigue confirmaciones. Tu secretaria virtual que nunca duerme.",
-    gradient: "from-indigo-500 to-purple-600"
+    gradient: "from-indigo-500 to-purple-600",
+    methodology: "Directivas claras + decisiones inteligentes + ejecucion confiable"
   }
 ];
 
@@ -69,6 +72,14 @@ const AgentsSection: React.FC = () => {
               <p className="text-slate-400 leading-relaxed">
                 {agent.description}
               </p>
+
+              {/* Methodology Line */}
+              <div className="mt-4 pt-4 border-t border-navy-700">
+                <div className="flex items-center gap-2 text-electric-400 text-sm">
+                  <Cog className="w-4 h-4" />
+                  <span className="font-medium">{agent.methodology}</span>
+                </div>
+              </div>
 
               {/* Active Indicator */}
               <div className="absolute top-6 right-6 flex items-center gap-2">
