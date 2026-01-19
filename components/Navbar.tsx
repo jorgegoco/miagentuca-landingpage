@@ -15,9 +15,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
+    { name: 'Metodologia', href: '#metodologia' },
     { name: 'Agentes', href: '#agentes' },
     { name: 'Casos de Uso', href: '#casos' },
     { name: 'Sobre mí', href: '#sobre-mi' },
+    { name: 'Blog', href: '/blog/index.html' },
   ];
 
   return (
