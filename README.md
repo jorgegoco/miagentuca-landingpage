@@ -16,7 +16,7 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
 
 ### Key Features
 
-- **3-Layer Methodology Section** - Explains the architecture that makes AI agents reliable (Directivas, Orquestacion, Ejecucion)
+- **3-Layer Methodology Section** - Explains the architecture that makes AI agents reliable (Directivas, Orquestación, Ejecución)
 - **FAQ Section** - Accordion-style answers to common questions
 - **Static Blog** - SEO-optimized articles about AI agents and methodology
 
@@ -41,17 +41,20 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
 ### Local Development
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/jorgegoco/miagentuca-landingpage.git
    cd miagentuca-landingpage
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start development server**
+
    ```bash
    npm run dev
    ```
@@ -59,6 +62,7 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
    Your site will be available at `http://localhost:3000`
 
 4. **Build for production**
+
    ```bash
    npm run build
    ```
@@ -106,12 +110,12 @@ miagentuca-landingpage/
 
 ## 🔧 Available Scripts
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run preview` | Preview production build locally |
-| `npm run deploy` | Manual deployment (not needed with GitHub Actions) |
+| Command           | Description                                        |
+| ----------------- | -------------------------------------------------- |
+| `npm run dev`     | Start development server                           |
+| `npm run build`   | Build for production                               |
+| `npm run preview` | Preview production build locally                   |
+| `npm run deploy`  | Manual deployment (not needed with GitHub Actions) |
 
 ## 🚢 Deployment
 
@@ -120,6 +124,7 @@ This project uses **GitHub Actions** for automatic deployment to GitHub Pages.
 ### Automatic Deployment (Recommended)
 
 Every push to the `main` branch automatically triggers:
+
 1. Build process
 2. Deployment to GitHub Pages
 3. Live site update at https://miagentuca.es
@@ -169,6 +174,7 @@ This is a private business website. Contributions are not accepted.
 ## 📞 Contact
 
 **Jorge González**
+
 - Email: jorgegoco70@gmail.com
 - LinkedIn: [linkedin.com/in/jorgegoco](https://www.linkedin.com/in/jorgegoco/)
 - Website: [miagentuca.es](https://miagentuca.es)
