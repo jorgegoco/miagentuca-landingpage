@@ -1,31 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Cpu } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react"
+import { Menu, X, Cpu } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 const Navbar: React.FC = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
-    { name: 'Metodologia', href: '#metodologia' },
-    { name: 'Agentes', href: '#agentes' },
-    { name: 'Casos de Uso', href: '#casos' },
-    { name: 'Sobre mí', href: '#sobre-mi' },
-    { name: 'Blog', href: '/blog/index.html' },
-  ];
+    { name: "Metodología", href: "#metodología" },
+    { name: "Agentes", href: "#agentes" },
+    { name: "Casos de Uso", href: "#casos" },
+    { name: "Sobre mí", href: "#sobre-mi" },
+    { name: "Blog", href: "/blog/index.html" },
+  ]
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-navy-900/95 backdrop-blur-md shadow-lg py-3' : 'bg-transparent py-5'
+        isScrolled
+          ? "bg-navy-900/95 backdrop-blur-md shadow-lg py-3"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
@@ -66,7 +68,7 @@ const Navbar: React.FC = () => {
         {isMobileMenuOpen && (
           <motion.div
             initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
+            animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-navy-900 border-t border-navy-700 overflow-hidden"
           >
@@ -86,7 +88,7 @@ const Navbar: React.FC = () => {
         )}
       </AnimatePresence>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

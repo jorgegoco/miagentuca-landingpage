@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FileText, Brain, Cog, AlertTriangle, CheckCircle } from 'lucide-react';
+import React from "react"
+import { motion } from "framer-motion"
+import { FileText, Brain, Cog, AlertTriangle, CheckCircle } from "lucide-react"
 
 const layers = [
   {
@@ -8,30 +8,33 @@ const layers = [
     title: "Capa de Directivas",
     subtitle: "Procedimientos claros en lenguaje natural",
     icon: <FileText className="w-8 h-8 text-white" />,
-    description: "Definimos exactamente que debe hacer el agente: paso a paso, sin ambiguedades. Como un manual de operaciones que la IA puede seguir.",
-    gradient: "from-purple-500 to-violet-600"
+    description:
+      "Definimos exactamente que debe hacer el agente: paso a paso, sin ambiguedades. Como un manual de operaciones que la IA puede seguir.",
+    gradient: "from-purple-500 to-violet-600",
   },
   {
     number: 2,
-    title: "Capa de Orquestacion",
+    title: "Capa de Orquestación",
     subtitle: "La IA toma decisiones inteligentes",
     icon: <Brain className="w-8 h-8 text-white" />,
-    description: "Aqui es donde la IA brilla: analiza el contexto, decide que hacer segun las directivas y planifica los pasos necesarios.",
-    gradient: "from-electric-500 to-blue-600"
+    description:
+      "Aquí es donde la IA brilla: analiza el contexto, decide que hacer según las directivas y planifica los pasos necesarios.",
+    gradient: "from-electric-500 to-blue-600",
   },
   {
     number: 3,
-    title: "Capa de Ejecucion",
-    subtitle: "Codigo determinista, sin alucinaciones",
+    title: "Capa de Ejecución",
+    subtitle: "Código determinista, sin alucinaciones",
     icon: <Cog className="w-8 h-8 text-white" />,
-    description: "Las acciones reales (enviar emails, actualizar sistemas) las ejecuta codigo tradicional. Predecible, testeable, sin sorpresas.",
-    gradient: "from-cyan-500 to-teal-600"
-  }
-];
+    description:
+      "Las acciones reales (enviar emails, actualizar sistemas) las ejecuta código tradicional. Predecible, testeable, sin sorpresas.",
+    gradient: "from-cyan-500 to-teal-600",
+  },
+]
 
 const MethodologySection: React.FC = () => {
   return (
-    <section id="metodologia" className="py-24 bg-white">
+    <section id="metodología" className="py-24 bg-white">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16">
@@ -42,7 +45,8 @@ const MethodologySection: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold text-navy-900 mb-6"
           >
-            Por que mis agentes <span className="text-electric-600">no fallan</span>
+            Por qué mis agentes{" "}
+            <span className="text-electric-600">no fallan</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -68,25 +72,41 @@ const MethodologySection: React.FC = () => {
               <AlertTriangle className="w-6 h-6 text-red-600" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-red-800 mb-3">El problema de los agentes "todo en uno"</h3>
+              <h3 className="text-xl font-bold text-red-800 mb-3">
+                El problema de los agentes "todo en uno"
+              </h3>
               <p className="text-red-700 mb-4">
-                Si cada paso de un proceso tiene un 90% de fiabilidad, un flujo de 5 pasos:
+                Si cada paso de un proceso tiene un 90% de fiabilidad, un flujo
+                de 5 pasos:
               </p>
               <div className="flex flex-wrap items-center gap-2 md:gap-4 font-mono text-lg md:text-2xl text-red-800 font-bold mb-4">
-                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">90%</span>
+                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">
+                  90%
+                </span>
                 <span className="text-red-400">×</span>
-                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">90%</span>
+                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">
+                  90%
+                </span>
                 <span className="text-red-400">×</span>
-                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">90%</span>
+                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">
+                  90%
+                </span>
                 <span className="text-red-400">×</span>
-                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">90%</span>
+                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">
+                  90%
+                </span>
                 <span className="text-red-400">×</span>
-                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">90%</span>
+                <span className="bg-white px-3 py-1 rounded-lg border border-red-200">
+                  90%
+                </span>
                 <span className="text-red-400">=</span>
-                <span className="bg-red-600 text-white px-4 py-1 rounded-lg">59%</span>
+                <span className="bg-red-600 text-white px-4 py-1 rounded-lg">
+                  59%
+                </span>
               </div>
               <p className="text-red-700 font-medium">
-                Casi la mitad de las veces, algo sale mal. Inaceptable para procesos criticos.
+                Casi la mitad de las veces, algo sale mal. Inaceptable para
+                procesos críticos.
               </p>
             </div>
           </div>
@@ -108,13 +128,21 @@ const MethodologySection: React.FC = () => {
                 Capa {layer.number}
               </div>
 
-              <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${layer.gradient} flex items-center justify-center mb-6 mt-2 shadow-lg`}>
+              <div
+                className={`w-14 h-14 rounded-xl bg-gradient-to-br ${layer.gradient} flex items-center justify-center mb-6 mt-2 shadow-lg`}
+              >
                 {layer.icon}
               </div>
 
-              <h3 className="text-xl font-bold text-navy-900 mb-2">{layer.title}</h3>
-              <p className="text-sm font-medium text-electric-600 mb-4">{layer.subtitle}</p>
-              <p className="text-slate-600 leading-relaxed">{layer.description}</p>
+              <h3 className="text-xl font-bold text-navy-900 mb-2">
+                {layer.title}
+              </h3>
+              <p className="text-sm font-medium text-electric-600 mb-4">
+                {layer.subtitle}
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                {layer.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -132,19 +160,27 @@ const MethodologySection: React.FC = () => {
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
             <div>
-              <h3 className="text-xl font-bold text-green-800 mb-3">El resultado</h3>
+              <h3 className="text-xl font-bold text-green-800 mb-3">
+                El resultado
+              </h3>
               <p className="text-green-700 text-lg mb-3">
-                <strong className="text-green-800">La IA decide que hacer.</strong> El codigo ejecuta <strong className="text-green-800">como hacerlo.</strong>
+                <strong className="text-green-800">
+                  La IA decide que hacer.
+                </strong>{" "}
+                El código ejecuta{" "}
+                <strong className="text-green-800">como hacerlo.</strong>
               </p>
               <p className="text-green-600">
-                Combinas lo mejor de ambos mundos: la flexibilidad de la IA para entender contexto y tomar decisiones, con la fiabilidad del codigo tradicional para ejecutar acciones criticas.
+                Combinas lo mejor de ambos mundos: la flexibilidad de la IA para
+                entender contexto y tomar decisiones, con la fiabilidad del
+                código tradicional para ejecutar acciones críticas.
               </p>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default MethodologySection;
+export default MethodologySection
