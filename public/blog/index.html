@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -6,39 +6,57 @@
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <title>Blog de Inteligencia Artificial Cantabria | Mi Agentuca - Articulos sobre IA para Pymes</title>
-    <meta name="description" content="Articulos sobre Inteligencia Artificial en Cantabria y Santander. Guias practicas de automatizacion, agentes de IA y la arquitectura de 3 capas para pymes cantabras." />
-    <meta name="keywords" content="blog Inteligencia Artificial Cantabria, IA Cantabria, Inteligencia Artificial Santander, agentes IA, automatizacion pymes, IA para empresas Cantabria" />
+    <title>
+      Blog de Inteligencia Artificial Cantabria | Mi Agentuca - Artículos sobre
+      IA para Pymes
+    </title>
+    <meta
+      name="description"
+      content="Artículos sobre Inteligencia Artificial en Cantabria y Santander. Guías prácticas de automatización, agentes de IA y la arquitectura de 3 capas para pymes cántabras."
+    />
+    <meta
+      name="keywords"
+      content="blog Inteligencia Artificial Cantabria, IA Cantabria, Inteligencia Artificial Santander, agentes IA, automatización pymes, IA para empresas Cantabria"
+    />
 
     <link rel="canonical" href="https://miagentuca.es/blog/" />
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://miagentuca.es/blog/" />
-    <meta property="og:title" content="Blog de Inteligencia Artificial Cantabria | Mi Agentuca" />
-    <meta property="og:description" content="Articulos sobre Inteligencia Artificial en Cantabria y Santander. Guias practicas de automatizacion para pymes." />
+    <meta
+      property="og:title"
+      content="Blog de Inteligencia Artificial Cantabria | Mi Agentuca"
+    />
+    <meta
+      property="og:description"
+      content="Artículos sobre Inteligencia Artificial en Cantabria y Santander. Guías prácticas de automatización para pymes."
+    />
     <meta property="og:locale" content="es_ES" />
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
+              sans: ["Inter", "sans-serif"],
             },
             colors: {
               navy: {
-                900: '#0a192f',
-                800: '#112240',
-                700: '#233554',
+                900: "#0a192f",
+                800: "#112240",
+                700: "#233554",
               },
               electric: {
-                400: '#38bdf8',
-                500: '#0ea5e9',
-                600: '#0284c7',
+                400: "#38bdf8",
+                500: "#0ea5e9",
+                600: "#0284c7",
               },
             },
           },
@@ -47,7 +65,7 @@
     </script>
     <style>
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
       }
     </style>
   </head>
@@ -57,25 +75,44 @@
       <div class="container mx-auto px-6">
         <nav class="flex justify-between items-center">
           <a href="/" class="flex items-center space-x-2 group">
-            <div class="p-2 bg-electric-600 rounded-lg group-hover:bg-electric-500 transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="16" height="16" x="4" y="4" rx="2"/>
-                <rect width="6" height="6" x="9" y="9" rx="1"/>
-                <path d="M15 2v2"/>
-                <path d="M15 20v2"/>
-                <path d="M2 15h2"/>
-                <path d="M2 9h2"/>
-                <path d="M20 15h2"/>
-                <path d="M20 9h2"/>
-                <path d="M9 2v2"/>
-                <path d="M9 20v2"/>
+            <div
+              class="p-2 bg-electric-600 rounded-lg group-hover:bg-electric-500 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="16" height="16" x="4" y="4" rx="2" />
+                <rect width="6" height="6" x="9" y="9" rx="1" />
+                <path d="M15 2v2" />
+                <path d="M15 20v2" />
+                <path d="M2 15h2" />
+                <path d="M2 9h2" />
+                <path d="M20 15h2" />
+                <path d="M20 9h2" />
+                <path d="M9 2v2" />
+                <path d="M9 20v2" />
               </svg>
             </div>
-            <span class="font-bold text-xl tracking-tight text-white">miagentuca.es</span>
+            <span class="font-bold text-xl tracking-tight text-white"
+              >miagentuca.es</span
+            >
           </a>
           <div class="flex items-center space-x-8">
-            <a href="/" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors">Inicio</a>
-            <a href="/blog/" class="text-sm font-medium text-electric-400">Blog</a>
+            <a
+              href="/"
+              class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
+              >Inicio</a
+            >
+            <a href="/blog/" class="text-sm font-medium text-electric-400"
+              >Blog</a
+            >
           </div>
         </nav>
       </div>
@@ -85,7 +122,9 @@
     <div class="bg-slate-100 border-b border-slate-200">
       <div class="container mx-auto px-6 py-3">
         <nav class="text-sm text-slate-600">
-          <a href="/" class="hover:text-electric-600 transition-colors">Inicio</a>
+          <a href="/" class="hover:text-electric-600 transition-colors"
+            >Inicio</a
+          >
           <span class="mx-2">/</span>
           <span class="text-slate-900 font-medium">Blog</span>
         </nav>
@@ -96,33 +135,64 @@
     <main class="py-16">
       <div class="container mx-auto px-6">
         <div class="text-center mb-16">
-          <h1 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6">Blog de Inteligencia Artificial</h1>
+          <h1 class="text-4xl md:text-5xl font-bold text-navy-900 mb-6">
+            Blog de Inteligencia Artificial
+          </h1>
           <p class="text-slate-600 max-w-2xl mx-auto text-lg">
-            Articulos sobre Inteligencia Artificial en Cantabria y Santander. Guias practicas, casos de uso y metodologias para implementar IA confiable en tu pyme.
+            Artículos sobre Inteligencia Artificial en Cantabria y Santander.
+            Guías prácticas, casos de uso y metodologías para implementar IA
+            confiable en tu pyme.
           </p>
         </div>
 
         <!-- Articles Grid -->
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Article: IA Cantabria Guide (NEW - Pillar) -->
-          <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
             <div class="p-8">
               <div class="flex items-center gap-2 mb-4">
-                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Guia</span>
-                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Cantabria</span>
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Guía</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Cantabria</span
+                >
               </div>
-              <h2 class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors">
-                <a href="/blog/inteligencia-artificial-cantabria-guia-2026.html">Inteligencia Artificial en Cantabria: Guia Completa para Empresas en 2026</a>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a href="/blog/inteligencia-artificial-cantabria-guia-2026.html"
+                  >Inteligencia Artificial en Cantabria: Guía Completa para
+                  Empresas en 2026</a
+                >
               </h2>
               <p class="text-slate-600 mb-4 leading-relaxed">
-                Descubre como la Inteligencia Artificial esta transformando empresas en Cantabria. Casos de uso reales, subvenciones Kit Digital y como empezar.
+                Descubre como la Inteligencia Artificial está transformando
+                empresas en Cantabria. Casos de uso reales, ayudas a la
+                digitalización y como empezar.
               </p>
               <div class="flex items-center justify-between">
-                <a href="/blog/inteligencia-artificial-cantabria-guia-2026.html" class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors">
-                  Leer articulo
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
+                <a
+                  href="/blog/inteligencia-artificial-cantabria-guia-2026.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
                 <span class="text-sm text-slate-400">20 Ene 2026 | 7 min</span>
@@ -131,24 +201,51 @@
           </article>
 
           <!-- Article: IA Santander (NEW) -->
-          <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
             <div class="p-8">
               <div class="flex items-center gap-2 mb-4">
-                <span class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full">Santander</span>
-                <span class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full">Pymes</span>
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Santander</span
+                >
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Pymes</span
+                >
               </div>
-              <h2 class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors">
-                <a href="/blog/inteligencia-artificial-santander-pymes-2026.html">Inteligencia Artificial en Santander: Como las Pymes Estan Automatizando</a>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a
+                  href="/blog/inteligencia-artificial-santander-pymes-2026.html"
+                  >Inteligencia Artificial en Santander: Como las Pymes Están
+                  Automatizando</a
+                >
               </h2>
               <p class="text-slate-600 mb-4 leading-relaxed">
-                Guia practica con casos de uso por barrios de Santander, costes reales y como empezar con IA en tu negocio santanderino.
+                Guía práctica con casos de uso por barrios de Santander, costes
+                reales y como empezar con IA en tu negocio santanderino.
               </p>
               <div class="flex items-center justify-between">
-                <a href="/blog/inteligencia-artificial-santander-pymes-2026.html" class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors">
-                  Leer articulo
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
+                <a
+                  href="/blog/inteligencia-artificial-santander-pymes-2026.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
                 <span class="text-sm text-slate-400">20 Ene 2026 | 6 min</span>
@@ -156,24 +253,47 @@
             </div>
           </article>
 
-          <!-- Article: Por que fallan -->
-          <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+          <!-- Article: Por qué fallan -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
             <div class="p-8">
               <div class="flex items-center gap-2 mb-4">
-                <span class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full">Problema</span>
+                <span
+                  class="bg-red-100 text-red-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Problema</span
+                >
               </div>
-              <h2 class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors">
-                <a href="/blog/por-que-los-agentes-ia-fallan.html">Por que los agentes de IA fallan (y como evitarlo)</a>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a href="/blog/por-que-los-agentes-ia-fallan.html"
+                  >Por que los agentes de IA fallan (y como evitarlo)</a
+                >
               </h2>
               <p class="text-slate-600 mb-4 leading-relaxed">
-                El 90%^5 = 59%. Descubre por que la mayoria de los agentes de IA no son confiables para procesos criticos y que arquitectura soluciona este problema.
+                El 90%^5 = 59%. Descubre por que la mayoría de los agentes de IA
+                no son confiables para procesos críticos y que arquitectura
+                soluciona este problema.
               </p>
               <div class="flex items-center justify-between">
-                <a href="/blog/por-que-los-agentes-ia-fallan.html" class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors">
-                  Leer articulo
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
+                <a
+                  href="/blog/por-que-los-agentes-ia-fallan.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
                 <span class="text-sm text-slate-400">19 Ene 2025 | 4 min</span>
@@ -182,23 +302,47 @@
           </article>
 
           <!-- Article: Arquitectura 3 capas -->
-          <article class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200">
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
             <div class="p-8">
               <div class="flex items-center gap-2 mb-4">
-                <span class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full">Solucion</span>
+                <span
+                  class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Solución</span
+                >
               </div>
-              <h2 class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors">
-                <a href="/blog/arquitectura-3-capas-explicada.html">La arquitectura de 3 capas explicada (con analogia de restaurante)</a>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a href="/blog/arquitectura-3-capas-explicada.html"
+                  >La arquitectura de 3 capas explicada (con analogía de
+                  restaurante)</a
+                >
               </h2>
               <p class="text-slate-600 mb-4 leading-relaxed">
-                Entiende como funciona la arquitectura que hace a los agentes de IA confiables, explicada con la analogia del chef, el maitre y los camareros.
+                Entiende como funciona la arquitectura que hace a los agentes de
+                IA confiables, explicada con la analogía del chef, el maitre y
+                los camareros.
               </p>
               <div class="flex items-center justify-between">
-                <a href="/blog/arquitectura-3-capas-explicada.html" class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors">
-                  Leer articulo
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14"/>
-                    <path d="m12 5 7 7-7 7"/>
+                <a
+                  href="/blog/arquitectura-3-capas-explicada.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
                   </svg>
                 </a>
                 <span class="text-sm text-slate-400">19 Ene 2025 | 5 min</span>
@@ -215,23 +359,32 @@
         <div class="flex flex-col md:flex-row justify-between items-center">
           <div class="flex items-center space-x-2 mb-4 md:mb-0">
             <div class="p-2 bg-electric-600 rounded-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect width="16" height="16" x="4" y="4" rx="2"/>
-                <rect width="6" height="6" x="9" y="9" rx="1"/>
-                <path d="M15 2v2"/>
-                <path d="M15 20v2"/>
-                <path d="M2 15h2"/>
-                <path d="M2 9h2"/>
-                <path d="M20 15h2"/>
-                <path d="M20 9h2"/>
-                <path d="M9 2v2"/>
-                <path d="M9 20v2"/>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="16" height="16" x="4" y="4" rx="2" />
+                <rect width="6" height="6" x="9" y="9" rx="1" />
+                <path d="M15 2v2" />
+                <path d="M15 20v2" />
+                <path d="M2 15h2" />
+                <path d="M2 9h2" />
+                <path d="M20 15h2" />
+                <path d="M20 9h2" />
+                <path d="M9 2v2" />
+                <path d="M9 20v2" />
               </svg>
             </div>
             <span class="font-bold text-white">miagentuca.es</span>
           </div>
           <p class="text-slate-400 text-sm">
-            &copy; 2026 Jorge Gonzalez. Todos los derechos reservados.
+            &copy; 2026 Jorge González. Todos los derechos reservados.
           </p>
         </div>
       </div>
