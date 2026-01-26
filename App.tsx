@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import ShiftSection from './components/ShiftSection';
 import MethodologySection from './components/MethodologySection';
 import AgentsSection from './components/AgentsSection';
+import DemoSection from './components/DemoSection';
 import AudienceSection from './components/AudienceSection';
 import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
@@ -29,6 +30,7 @@ function App() {
         <ShiftSection />
         <MethodologySection />
         <AgentsSection />
+        <DemoSection />
         <AudienceSection />
         <FAQSection />
         <AboutSection />
