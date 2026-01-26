@@ -1,6 +1,6 @@
 import React from "react"
 import { motion } from "framer-motion"
-import { FileCheck, ShoppingCart, Calendar, Cog } from "lucide-react"
+import { FileCheck, ShoppingCart, Calendar, Cog, Play } from "lucide-react"
 
 const agents = [
   {
@@ -12,6 +12,8 @@ const agents = [
     gradient: "from-blue-500 to-indigo-600",
     methodology:
       "Directivas claras + decisiones inteligentes + ejecución confiable",
+    hasDemo: true,
+    demoTab: "gestoria",
   },
   {
     title: "El Agente de Compras",
@@ -22,6 +24,8 @@ const agents = [
     gradient: "from-cyan-500 to-blue-600",
     methodology:
       "Directivas claras + decisiones inteligentes + ejecución confiable",
+    hasDemo: true,
+    demoTab: "compras",
   },
   {
     title: "El Agente de Agenda",
@@ -32,6 +36,8 @@ const agents = [
     gradient: "from-indigo-500 to-purple-600",
     methodology:
       "Directivas claras + decisiones inteligentes + ejecución confiable",
+    hasDemo: false,
+    demoTab: null,
   },
 ]
 
@@ -87,9 +93,20 @@ const AgentsSection: React.FC = () => {
 
               {/* Methodology Line */}
               <div className="mt-4 pt-4 border-t border-navy-700">
-                <div className="flex items-center gap-2 text-electric-400 text-sm">
-                  <Cog className="w-4 h-4" />
-                  <span className="font-medium">{agent.methodology}</span>
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 text-electric-400 text-sm">
+                    <Cog className="w-4 h-4" />
+                    <span className="font-medium">{agent.methodology}</span>
+                  </div>
+                  {agent.hasDemo && (
+                    <a
+                      href="#demos"
+                      className="flex items-center gap-1 px-3 py-1.5 bg-electric-500/20 text-electric-400 text-xs font-semibold rounded-full hover:bg-electric-500/30 transition-colors"
+                    >
+                      <Play className="w-3 h-3" />
+                      Probar
+                    </a>
+                  )}
                 </div>
               </div>
 
