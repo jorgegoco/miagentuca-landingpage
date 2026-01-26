@@ -2,11 +2,11 @@
 
 Professional landing page for AI consulting services focused on implementing intelligent agents for SMBs in Santander and Cantabria, Spain.
 
-## 🌐 Live Site
+## Live Site
 
 **https://miagentuca.es**
 
-## 📋 Overview
+## Overview
 
 This is a modern, SEO-optimized landing page showcasing three main AI agent services:
 
@@ -16,11 +16,22 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
 
 ### Key Features
 
-- **3-Layer Methodology Section** - Explains the architecture that makes AI agents reliable (Directivas, Orquestación, Ejecución)
+- **3-Layer Methodology Section** - Explains the architecture that makes AI agents reliable (Directivas, Orquestacion, Ejecucion)
+- **Interactive Demo Section** - Live demos connecting to real AI agent APIs
 - **FAQ Section** - Accordion-style answers to common questions
 - **Static Blog** - SEO-optimized articles about AI agents and methodology
 
-## 🛠️ Technology Stack
+## Live Demos
+
+The landing page includes interactive demos that connect to live APIs:
+
+| Demo | Description | Try it |
+|------|-------------|--------|
+| **Gestoria** | Upload a PDF and get automatic document classification | [gestoria.miagentuca.es/docs](https://gestoria.miagentuca.es/docs) |
+| **Compras** | Search for products and compare suppliers | [compras.miagentuca.es/docs](https://compras.miagentuca.es/docs) |
+| **Explain** | Describe a process and generate agent architecture | [explain.miagentuca.es/docs](https://explain.miagentuca.es/docs) |
+
+## Technology Stack
 
 - **React 19** - Modern UI library
 - **TypeScript** - Type-safe development
@@ -31,7 +42,7 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
 - **GitHub Pages** - Free, reliable hosting
 - **GitHub Actions** - Automated CI/CD
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -74,7 +85,7 @@ This is a modern, SEO-optimized landing page showcasing three main AI agent serv
    npm run preview
    ```
 
-## 📦 Project Structure
+## Project Structure
 
 ```
 miagentuca-landingpage/
@@ -83,7 +94,8 @@ miagentuca-landingpage/
 │   ├── Hero.tsx
 │   ├── ShiftSection.tsx
 │   ├── MethodologySection.tsx  # 3-layer architecture explanation
-│   ├── AgentsSection.tsx
+│   ├── AgentsSection.tsx       # Agent cards with demo buttons
+│   ├── DemoSection.tsx         # Interactive API demos
 │   ├── AudienceSection.tsx
 │   ├── FAQSection.tsx          # Accordion FAQ
 │   ├── AboutSection.tsx
@@ -108,7 +120,7 @@ miagentuca-landingpage/
 └── package.json        # Dependencies and scripts
 ```
 
-## 🔧 Available Scripts
+## Available Scripts
 
 | Command           | Description                                        |
 | ----------------- | -------------------------------------------------- |
@@ -117,7 +129,7 @@ miagentuca-landingpage/
 | `npm run preview` | Preview production build locally                   |
 | `npm run deploy`  | Manual deployment (not needed with GitHub Actions) |
 
-## 🚢 Deployment
+## Deployment
 
 This project uses **GitHub Actions** for automatic deployment to GitHub Pages.
 
@@ -141,7 +153,7 @@ npm run deploy
 
 This builds the project and pushes to the `gh-pages` branch.
 
-## 🌍 SEO Features
+## SEO Features
 
 - **Local SEO optimized** for Santander and Cantabria
 - **Schema.org JSON-LD** structured data (ProfessionalService, FAQPage, Article)
@@ -152,28 +164,28 @@ This builds the project and pushes to the `gh-pages` branch.
 - **HTTPS** with automatic SSL certificate
 - **Static blog** with Article schema for rich search results
 
-## 📧 Contact Form
+## Contact Form
 
 The contact form uses [FormSubmit.co](https://formsubmit.co/) for handling submissions without a backend. Messages are sent to the configured email address.
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
 - HTTPS enforced via GitHub Pages
 - No sensitive data stored in repository
 - FormSubmit.co privacy token configured
 - DNS secured via DonDominio
 
-## 📝 License
+## License
 
-Copyright © 2025 Jorge González. All rights reserved.
+Copyright 2025 Jorge Gonzalez. All rights reserved.
 
-## 🤝 Contributing
+## Contributing
 
 This is a private business website. Contributions are not accepted.
 
-## 📞 Contact
+## Contact
 
-**Jorge González**
+**Jorge Gonzalez**
 
 - Email: jorgegoco70@gmail.com
 - LinkedIn: [linkedin.com/in/jorgegoco](https://www.linkedin.com/in/jorgegoco/)
