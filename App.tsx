@@ -10,6 +10,7 @@ import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
 import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
+import SectionDivider from './components/SectionDivider';
 
 function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -27,12 +28,16 @@ function App() {
       <Navbar />
       <main>
         <Hero onOpenModal={() => setIsModalOpen(true)} />
+        <SectionDivider fromColor="navy" toColor="white" variant="wave" />
         <ShiftSection />
         <MethodologySection />
+        <SectionDivider fromColor="white" toColor="navy" variant="wave" />
         <AgentsSection />
+        <SectionDivider fromColor="navy" toColor="slate" variant="gradient" />
         <DemoSection />
         <AudienceSection />
         <FAQSection />
+        <SectionDivider fromColor="slate" toColor="white" variant="gradient" />
         <AboutSection />
       </main>
       <Footer />
