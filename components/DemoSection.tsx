@@ -272,8 +272,8 @@ const DemoSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            Interactua con demos reales de agentes usando la arquitectura de 3
-            capas
+            Interactua con demos reales de agentes de inteligencia artificial usando la arquitectura de 3
+            capas basada en microservicios
           </motion.p>
         </div>
 

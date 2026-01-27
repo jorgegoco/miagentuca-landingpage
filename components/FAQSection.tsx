@@ -10,9 +10,9 @@ interface FAQ {
 const faqs: FAQ[] = [
   {
     question:
-      "Cuál es la diferencia entre automatización clásica y agentes de IA?",
+      "Cuál es la diferencia entre automatización clásica y workflows agénticos con IA?",
     answer:
-      "La automatización clásica sigue reglas fijas: 'si pasa X, haz Y'. Los agentes de IA entienden contexto y toman decisiones. Por ejemplo, un bot clásico reenvía todos los emails con 'urgente' en el asunto. Un agente lee el email, evalúa si realmente es urgente, y decide la mejor respuesta según tu historial y preferencias.",
+      "La automatización clásica sigue reglas fijas: 'si pasa X, haz Y'. Los workflows agénticos con inteligencia artificial entienden contexto y toman decisiones. Por ejemplo, un bot clásico reenvía todos los emails con 'urgente' en el asunto. Un agente de IA lee el email, evalúa si realmente es urgente, y decide la mejor respuesta según tu historial y preferencias.",
   },
   {
     question: "Necesito cambiar mi software actual para usar agentes?",

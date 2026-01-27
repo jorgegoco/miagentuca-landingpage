@@ -17,7 +17,7 @@ const AudienceSection: React.FC = () => {
             Ideal para gerentes que pasan más tiempo gestionando papeles que
             haciendo crecer su negocio: <br className="hidden md:block" />
             <span className="font-semibold text-navy-800">
-              Gestorías, Ingenierías y Comercio Local.
+              Gestorías, Ingenierías y Comercio Local en Santander y Cantabria.
             </span>
           </p>
         </div>
@@ -31,7 +31,7 @@ const AudienceSection: React.FC = () => {
             </h2>
             <p className="text-slate-600 mb-8 text-lg">
               No necesitas cambiar todo tu software ni formar a tu equipo
-              durante meses. Mi metodología es quirúrgica y rápida.
+              durante meses. Mi metodología de automatización inteligente es quirúrgica y rápida.
             </p>
 
             <div className="space-y-6">
