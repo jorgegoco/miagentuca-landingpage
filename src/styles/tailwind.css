@@ -1,6 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+/* Load config file */
+@config "../../tailwind.config.js";
+
+/* Specify content sources */
+@source "../../index.html";
+@source "../../src/**/*.{js,ts,jsx,tsx}";
+@source "../../components/**/*.{js,ts,jsx,tsx}";
+@source "../../public/blog/**/*.html";
+
+/* Custom theme additions for Tailwind v4 */
+@theme {
+  --color-navy-900: #0a192f;
+  --color-navy-800: #112240;
+  --color-navy-700: #233554;
+  --color-electric-400: #38bdf8;
+  --color-electric-500: #0ea5e9;
+  --color-electric-600: #0284c7;
+}
 
 /* Base styles */
 body {
