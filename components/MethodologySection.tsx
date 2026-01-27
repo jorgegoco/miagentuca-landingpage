@@ -34,8 +34,10 @@ const layers = [
 
 const MethodologySection: React.FC = () => {
   return (
-    <section id="metodología" className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="metodología" className="py-24 bg-white relative overflow-hidden">
+      {/* Background accents */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-electric-500/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <motion.h2
@@ -55,7 +57,7 @@ const MethodologySection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            La arquitectura de 3 capas que separa las decisiones de las acciones
+            La arquitectura de 3 capas basada en microservicios que separa las decisiones de las acciones
           </motion.p>
         </div>
 
