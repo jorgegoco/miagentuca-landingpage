@@ -27,7 +27,7 @@ const AboutSection: React.FC = () => {
               Consultor de Inteligencia Artificial y Desarrollador de Agentes en Santander
             </p>
 
-            <p className="text-slate-600 text-lg leading-relaxed mb-8">
+            <p className="text-slate-600 text-lg leading-relaxed mb-4">
               "La tecnología avanza rápido, pero mi enfoque sigue siendo el
               mismo:{" "}
               <span className="text-navy-900 font-medium">
@@ -35,6 +35,17 @@ const AboutSection: React.FC = () => {
               </span>
               . Ayudo a empresas en Cantabria y toda España a implementar arquitectura de microservicios
               con inteligencia artificial de forma práctica."
+            </p>
+
+            <p className="text-slate-500 text-sm mb-8">
+              Como{" "}
+              <a
+                href="/servicios/inteligencia-artificial-cantabria.html"
+                className="text-electric-600 hover:text-electric-700 underline"
+              >
+                consultor local de IA en Cantabria
+              </a>
+              , ofrezco reuniones presenciales en Santander y alrededores.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

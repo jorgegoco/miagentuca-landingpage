@@ -103,6 +103,38 @@ const AgentsSection: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA to Services */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <p className="text-slate-400 mb-4">
+            Estos agentes ya están funcionando en empresas de Cantabria
+          </p>
+          <a
+            href="/servicios/inteligencia-artificial-cantabria.html"
+            className="inline-flex items-center gap-2 text-electric-400 hover:text-electric-300 font-medium transition-colors group"
+          >
+            Ver todos los servicios de IA en Cantabria
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M5 12h14" />
+              <path d="m12 5 7 7-7 7" />
+            </svg>
+          </a>
+        </motion.div>
       </div>
     </section>
   )
