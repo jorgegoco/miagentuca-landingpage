@@ -31,6 +31,7 @@ interface GestoriaResult {
 interface Supplier {
   name: string
   unit_price?: number
+  unit?: string
   total_price?: number
   shipping_cost?: number
   delivery_days?: number
@@ -503,9 +504,9 @@ const DemoSection: React.FC = () => {
                               <div className="text-right">
                                 <p className="font-bold text-cyan-700">
                                   {typeof supplier.total_price === "number"
-                                    ? `${supplier.total_price.toFixed(2)} EUR`
+                                    ? `${supplier.total_price.toFixed(2)} EUR${supplier.unit ? `/${supplier.unit}` : ""}`
                                     : typeof supplier.unit_price === "number"
-                                      ? `${supplier.unit_price.toFixed(2)} EUR/ud`
+                                      ? `${supplier.unit_price.toFixed(2)} EUR/${supplier.unit || "ud"}`
                                       : "Consultar"}
                                 </p>
                                 <p className="text-xs text-slate-500">
