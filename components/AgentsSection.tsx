@@ -15,10 +15,10 @@ const agents = [
   },
   {
     title: "El Agente de Compras",
-    subtitle: "Para Construcción/Reformas",
+    subtitle: "Para cualquier negocio",
     icon: <ShoppingCart className="w-8 h-8 text-white" />,
     description:
-      "Recibe listas de materiales, pide ofertas a tus proveedores habituales, compara precios y te presenta un Excel listo para aprobar la compra más rentable.",
+      "Describe lo que necesitas comprar, busca proveedores reales, compara precios y recibe una recomendación con el mejor precio, la entrega más rápida y la mejor relación calidad-precio.",
     gradient: "from-cyan-500 to-blue-600",
     methodology:
       "Directivas claras + decisiones inteligentes + ejecución confiable",

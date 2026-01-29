@@ -75,7 +75,7 @@ const demos = [
   {
     id: "compras" as DemoTab,
     title: "Agente de Compras",
-    subtitle: "Construcción",
+    subtitle: "Cualquier negocio",
     icon: <ShoppingCart className="w-5 h-5" />,
     gradient: "from-cyan-500 to-blue-600",
     description: "Busca productos y compara proveedores al instante",
@@ -179,7 +179,7 @@ const DemoSection: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           product: productQuery,
-          quantity: 100,
+          quantity: 1,
         }),
       })
 
@@ -447,7 +447,7 @@ const DemoSection: React.FC = () => {
                       type="text"
                       value={productQuery}
                       onChange={(e) => setProductQuery(e.target.value)}
-                      placeholder="ej: 100 tornillos de 6mm acero inoxidable"
+                      placeholder="ej: folios A4, tornillos M6 inox, guantes de nitrilo..."
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-electric-500 focus:border-electric-500 outline-none transition-all"
                     />
                   </div>
