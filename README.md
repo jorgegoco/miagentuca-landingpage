@@ -11,7 +11,7 @@ Professional landing page for AI consulting services focused on implementing int
 This is a modern, SEO-optimized landing page showcasing three main AI agent services:
 
 - **Administrative Agents** - Automation for accounting firms
-- **Purchasing Agents** - Procurement optimization for construction
+- **Purchasing Agents** - Universal procurement agent for any business
 - **Calendar/Scheduling Agents** - 24/7 virtual secretary services
 
 ### Key Features
