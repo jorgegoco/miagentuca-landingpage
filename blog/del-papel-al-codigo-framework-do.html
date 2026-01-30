@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <title>
+      Del Papel al Código: Cómo Convertir tus SOPs en Agentes de IA con el Framework DO | Mi Agentuca
+    </title>
+    <meta
+      name="description"
+      content="Guía práctica para transformar tus procedimientos operativos (SOPs) en agentes de IA confiables usando el Framework DO: Directivas, Orquestación y Ejecución."
+    />
+    <meta
+      name="keywords"
+      content="Framework DO, SOPs IA, procedimientos automatización, directives orchestration execution, agentes IA empresariales, automatización inteligente Cantabria, workflows agénticos"
+    />
+
+    <link
+      rel="canonical"
+      href="https://miagentuca.es/blog/del-papel-al-codigo-framework-do.html"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://miagentuca.es/blog/del-papel-al-codigo-framework-do.html"
+    />
+    <meta
+      property="og:title"
+      content="Del Papel al Código: Convertir SOPs en Agentes de IA con Framework DO"
+    />
+    <meta
+      property="og:description"
+      content="Guía práctica para transformar procedimientos operativos en agentes de IA confiables."
+    />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="article:author" content="Jorge González" />
+
+    <!-- Article JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Del Papel al Código: Cómo Convertir tus SOPs en Agentes de IA con el Framework DO",
+        "description": "Guía práctica para transformar tus procedimientos operativos (SOPs) en agentes de IA confiables usando el Framework DO.",
+        "author": {
+          "@type": "Person",
+          "name": "Jorge González",
+          "url": "https://miagentuca.es"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Mi Agentuca",
+          "url": "https://miagentuca.es"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://miagentuca.es/blog/del-papel-al-codigo-framework-do.html"
+        },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://miagentuca.es/og-image.png"
+        },
+        "datePublished": "2026-01-27T12:00:00+01:00",
+        "dateModified": "2026-01-27T12:00:00+01:00"
+      }
+    </script>
+
+    <!-- BreadcrumbList JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://miagentuca.es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://miagentuca.es/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Del Papel al Codigo: Framework DO",
+            "item": "https://miagentuca.es/blog/del-papel-al-codigo-framework-do.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .code-block {
+        background: #1e293b;
+        color: #e2e8f0;
+        padding: 1.5rem;
+        border-radius: 0.5rem;
+        overflow-x: auto;
+        font-family: "Courier New", monospace;
+        font-size: 0.875rem;
+        line-height: 1.6;
+      }
+      .code-block .comment {
+        color: #94a3b8;
+      }
+      .code-block .keyword {
+        color: #38bdf8;
+        font-weight: 600;
+      }
+      .code-block .string {
+        color: #4ade80;
+      }
+    </style>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased">
+    <!-- Header -->
+    <header class="bg-navy-900 py-6">
+      <div class="container mx-auto px-6">
+        <nav class="flex justify-between items-center">
+          <a href="/" class="flex items-center space-x-2 group">
+            <div
+              class="p-2 bg-electric-600 rounded-lg group-hover:bg-electric-500 transition-colors"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="16" height="16" x="4" y="4" rx="2" />
+                <rect width="6" height="6" x="9" y="9" rx="1" />
+                <path d="M15 2v2" />
+                <path d="M15 20v2" />
+                <path d="M2 15h2" />
+                <path d="M2 9h2" />
+                <path d="M20 15h2" />
+                <path d="M20 9h2" />
+                <path d="M9 2v2" />
+                <path d="M9 20v2" />
+              </svg>
+            </div>
+            <span class="font-bold text-xl tracking-tight text-white"
+              >miagentuca.es</span
+            >
+          </a>
+          <div class="flex items-center space-x-8">
+            <a
+              href="/"
+              class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
+              >Inicio</a
+            >
+            <a
+              href="/servicios/"
+              class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
+              >Servicios</a
+            >
+            <a
+              href="/blog/"
+              class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
+              >Blog</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="bg-slate-100 border-b border-slate-200">
+      <div class="container mx-auto px-6 py-3">
+        <nav class="text-sm text-slate-600">
+          <a href="/" class="hover:text-electric-600 transition-colors"
+            >Inicio</a
+          >
+          <span class="mx-2">/</span>
+          <a href="/blog/" class="hover:text-electric-600 transition-colors"
+            >Blog</a
+          >
+          <span class="mx-2">/</span>
+          <span class="text-slate-900 font-medium"
+            >Del Papel al Código: Framework DO</span
+          >
+        </nav>
+      </div>
+    </div>
+
+    <!-- Article Content -->
+    <article class="py-16">
+      <div class="container mx-auto px-6 max-w-3xl">
+        <!-- Header -->
+        <header class="mb-12">
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span
+              class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full"
+              >Guía Técnica</span
+            >
+            <span
+              class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full"
+              >Framework DO</span
+            >
+          </div>
+          <h1
+            class="text-4xl md:text-5xl font-bold text-navy-900 mb-6 leading-tight"
+          >
+            Del Papel al Código: Cómo Convertir tus SOPs en Agentes de IA con
+            el Framework DO
+          </h1>
+          <div class="flex items-center text-slate-500 text-sm">
+            <span>Por Jorge González</span>
+            <span class="mx-3">•</span>
+            <time datetime="2026-01-27">27 de enero de 2026</time>
+            <span class="mx-3">•</span>
+            <span>8 min de lectura</span>
+          </div>
+        </header>
+
+        <!-- Introduction -->
+        <div class="prose prose-lg max-w-none mb-12">
+          <p class="text-xl text-slate-700 leading-relaxed">
+            Tienes un Word con el procedimiento de "Clasificación de
+            Documentos" que tu equipo debería seguir, pero la mitad del tiempo
+            nadie lo mira. ¿Y si ese documento pudiera ejecutarse solo?
+          </p>
+
+          <p>
+            El <strong>Framework DO</strong> (Directive-Orchestration-Execution)
+            convierte tus procedimientos operativos estándar (SOPs) en agentes
+            de IA que <em>realmente funcionan</em>. No es magia: es
+            arquitectura de microservicios aplicada a la inteligencia
+            artificial.
+          </p>
+
+          <p>
+            En este artículo te enseño cómo pasar del papel al código, paso a
+            paso.
+          </p>
+        </div>
+
+        <!-- Section 1: El Problema -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            El Problema: SOPs que Nadie Sigue
+          </h2>
+
+          <div
+            class="bg-red-50 border-l-4 border-red-500 p-6 mb-6 rounded-r-lg"
+          >
+            <p class="text-red-800">
+              <strong>Escenario típico en una gestoría:</strong>
+            </p>
+            <ul class="mt-3 space-y-2 text-red-700">
+              <li>
+                • Tienes un documento de 15 páginas: "Protocolo de Gestión de
+                Facturas"
+              </li>
+              <li>
+                • Explica exactamente qué hacer cuando llega una factura nueva
+              </li>
+              <li>
+                • Nadie lo lee porque está en una carpeta de Drive perdida
+              </li>
+              <li>
+                • Cada persona hace el proceso "a su manera"
+              </li>
+              <li>
+                • Resultado: inconsistencia, errores, pérdida de tiempo
+              </li>
+            </ul>
+          </div>
+
+          <p>
+            Los SOPs tradicionales tienen tres problemas fundamentales:
+          </p>
+          <ol class="space-y-3 ml-6 mb-6">
+            <li>
+              <strong>1. No se ejecutan solos:</strong> Requieren que un humano
+              los lea, interprete y ejecute manualmente cada paso.
+            </li>
+            <li>
+              <strong>2. Se quedan obsoletos:</strong> Cuando el proceso
+              cambia, el documento rara vez se actualiza.
+            </li>
+            <li>
+              <strong>3. Son estáticos:</strong> No se adaptan a situaciones
+              inesperadas ni toman decisiones.
+            </li>
+          </ol>
+
+          <p class="text-lg font-medium text-electric-600">
+            El Framework DO soluciona estos tres problemas convirtiendo
+            procedimientos pasivos en agentes activos.
+          </p>
+        </section>
+
+        <!-- Section 2: Framework DO -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            Qué es el Framework DO
+          </h2>
+
+          <p class="mb-6">
+            <strong>DO</strong> significa
+            <em>Directive-Orchestration-Execution</em> (Directiva-Orquestación-Ejecución).
+            Es una arquitectura de software de 3 capas diseñada para convertir
+            procesos de negocio en workflows agénticos confiables.
+          </p>
+
+          <div class="grid md:grid-cols-3 gap-6 mb-8">
+            <!-- Layer 1 -->
+            <div class="bg-purple-50 border border-purple-200 rounded-xl p-6">
+              <div
+                class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-4"
+              >
+                <span class="text-white text-2xl font-bold">1</span>
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-2">
+                Capa de Directivas
+              </h3>
+              <p class="text-sm text-slate-600 mb-3">
+                <em>QUÉ hacer</em>
+              </p>
+              <p class="text-slate-700">
+                Tu SOP convertido a lenguaje natural estructurado. Define
+                objetivos, inputs, pasos y outputs esperados.
+              </p>
+            </div>
+
+            <!-- Layer 2 -->
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <div
+                class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center mb-4"
+              >
+                <span class="text-white text-2xl font-bold">2</span>
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-2">
+                Capa de Orquestación
+              </h3>
+              <p class="text-sm text-slate-600 mb-3">
+                <em>DECIDIR cómo</em>
+              </p>
+              <p class="text-slate-700">
+                La IA actúa como project manager. Lee la directiva, analiza el
+                contexto y decide qué herramientas usar.
+              </p>
+            </div>
+
+            <!-- Layer 3 -->
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <div
+                class="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mb-4"
+              >
+                <span class="text-white text-2xl font-bold">3</span>
+              </div>
+              <h3 class="text-xl font-bold text-navy-900 mb-2">
+                Capa de Ejecución
+              </h3>
+              <p class="text-sm text-slate-600 mb-3">
+                <em>EJECUTAR acciones</em>
+              </p>
+              <p class="text-slate-700">
+                Scripts de código tradicional (Python, JavaScript) que realizan
+                acciones concretas. Deterministas y testeables.
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-electric-50 border border-electric-200 rounded-xl p-6">
+            <p class="text-electric-800">
+              <strong>Clave:</strong> La IA <em>decide</em>, pero el código
+              <em>ejecuta</em>. Esto elimina alucinaciones en pasos críticos y
+              garantiza fiabilidad.
+            </p>
+          </div>
+        </section>
+
+        <!-- Section 3: Paso a Paso -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            Paso a Paso: De SOP a Agente
+          </h2>
+
+          <p class="mb-6">
+            Vamos a convertir un procedimiento real de gestoría en un agente
+            funcional.
+          </p>
+
+          <!-- Step 1 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-navy-900 mb-4 flex items-center">
+              <span
+                class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center mr-3 text-sm"
+                >1</span
+              >
+              Extrae tu SOP actual
+            </h3>
+
+            <p class="mb-4">
+              Toma el procedimiento que ya tienes (aunque esté mal escrito o
+              incompleto). Por ejemplo:
+            </p>
+
+            <div class="bg-slate-100 p-6 rounded-lg mb-4">
+              <p class="font-mono text-sm text-slate-700">
+                <strong>Procedimiento: Clasificación de Facturas</strong><br />
+                1. Recibir PDF del cliente<br />
+                2. Revisar si tiene NIF emisor y receptor<br />
+                3. Si tiene ambos → es Factura Completa<br />
+                4. Si solo tiene NIF emisor → es Ticket o Factura
+                Simplificada<br />
+                5. Si falta información → solicitar datos al cliente<br />
+                6. Archivar en carpeta correspondiente
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-navy-900 mb-4 flex items-center">
+              <span
+                class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center mr-3 text-sm"
+                >2</span
+              >
+              Convierte a Directiva (Markdown)
+            </h3>
+
+            <p class="mb-4">
+              Crea un archivo <code>clasificar_factura.md</code> en la carpeta
+              <code>/directives</code>:
+            </p>
+
+            <div class="code-block">
+<span class="comment"># Clasificar Factura</span>
+
+<span class="keyword">## Objetivo</span>
+Clasificar facturas entrantes por tipo fiscal
+
+<span class="keyword">## Inputs</span>
+- PDF del documento (max 5MB)
+- Email del cliente (para solicitar datos)
+
+<span class="keyword">## Proceso</span>
+1. Extraer texto del PDF usando herramienta de OCR
+2. Buscar campos clave:
+   - NIF Emisor (formato: 12345678A)
+   - NIF Receptor
+   - Base imponible
+   - Tipo IVA
+
+3. <span class="keyword">Clasificar según tipo:</span>
+   - <span class="string">Factura Completa</span>: tiene NIF emisor Y receptor
+   - <span class="string">Factura Simplificada</span>: solo NIF emisor, importe < 400€
+   - <span class="string">Ticket</span>: sin NIF receptor, importe < 400€
+
+4. <span class="keyword">Si falta información crítica:</span>
+   - Ejecutar script solicitar_datos_cliente.py
+   - Marcar documento como "Pendiente de datos"
+
+5. Archivar en carpeta correspondiente
+
+<span class="keyword">## Outputs</span>
+- Tipo de documento: [Factura Completa | Simplificada | Ticket]
+- Confianza de clasificación: 0-100%
+- Siguiente acción: [Archivar | Solicitar datos]
+
+<span class="keyword">## Casos Excepcionales</span>
+- Si confianza < 80%: marcar para revisión humana
+- Si OCR falla: intentar con proveedor alternativo
+            </div>
+
+            <p class="mt-4 text-sm text-slate-600">
+              <strong>Nota:</strong> Esto es lenguaje natural, no código.
+              Cualquier persona de tu equipo puede leerlo y entenderlo.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-navy-900 mb-4 flex items-center">
+              <span
+                class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center mr-3 text-sm"
+                >3</span
+              >
+              Deja que la IA Orqueste
+            </h3>
+
+            <p class="mb-4">
+              Aquí entra Claude, ChatGPT o Gemini. El modelo de IA:
+            </p>
+
+            <ul class="space-y-2 ml-6 mb-4">
+              <li>• <strong>Lee</strong> la directiva</li>
+              <li>
+                • <strong>Analiza</strong> el documento PDF que le proporcionas
+              </li>
+              <li>
+                • <strong>Decide</strong> qué pasos seguir basándose en el
+                contexto
+              </li>
+              <li>
+                • <strong>Llama</strong> a los scripts de ejecución necesarios
+              </li>
+            </ul>
+
+            <div
+              class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg"
+            >
+              <p class="text-blue-800">
+                <strong>Ejemplo de decisión:</strong><br />
+                El agente detecta que falta el NIF receptor en la factura. En
+                lugar de simplemente "fallar", consulta la directiva, ve la
+                regla de "Si falta información crítica", y decide ejecutar
+                <code>solicitar_datos_cliente.py</code> automáticamente.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-navy-900 mb-4 flex items-center">
+              <span
+                class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center mr-3 text-sm"
+                >4</span
+              >
+              Crea Scripts de Ejecución
+            </h3>
+
+            <p class="mb-4">
+              Estos son los microservicios deterministas. Ejemplo de
+              <code>solicitar_datos_cliente.py</code>:
+            </p>
+
+            <div class="code-block">
+<span class="comment"># solicitar_datos_cliente.py</span>
+<span class="keyword">def</span> solicitar_nif_receptor(cliente_email, documento_id):
+    <span class="comment">"""
+    Envía email automático solicitando NIF receptor
+    Determinista: mismo input = mismo output siempre
+    """</span>
+
+    <span class="comment"># Cargar template HTML</span>
+    template = cargar_template(<span class="string">"solicitud_nif.html"</span>)
+
+    <span class="comment"># Enviar email</span>
+    enviar_email(
+        to=cliente_email,
+        subject=<span class="string">"Falta NIF del receptor en tu factura"</span>,
+        body=template.render(documento_id=documento_id),
+        attachments=None
+    )
+
+    <span class="comment"># Registrar en base de datos</span>
+    db.registrar_log(
+        documento_id=documento_id,
+        accion=<span class="string">"nif_solicitado"</span>,
+        timestamp=datetime.now()
+    )
+
+    <span class="keyword">return</span> {<span class="string">"status"</span>: <span class="string">"enviado"</span>, <span class="string">"email"</span>: cliente_email}
+            </div>
+
+            <p class="mt-4">
+              <strong>Ventajas de esta capa:</strong>
+            </p>
+            <ul class="space-y-2 ml-6">
+              <li>
+                • <strong>Testeable:</strong> Puedes escribir unit tests
+              </li>
+              <li>
+                • <strong>Reutilizable:</strong> El mismo script sirve para
+                múltiples directivas
+              </li>
+              <li>
+                • <strong>Versionado:</strong> Control de versiones con Git
+              </li>
+              <li>
+                • <strong>Sin alucinaciones:</strong> El código hace
+                <em>exactamente</em> lo que programaste
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 4: Resultado -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            El Resultado: Un Agente que Funciona
+          </h2>
+
+          <p class="mb-6">Ahora tienes un sistema que:</p>
+
+          <div class="grid md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 class="font-bold text-green-800 mb-3 flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Se ejecuta solo
+              </h3>
+              <p class="text-green-700 text-sm">
+                Cuando llega un PDF, el agente lee la directiva y actúa sin
+                intervención humana. Solo pide ayuda cuando la necesita.
+              </p>
+            </div>
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 class="font-bold text-green-800 mb-3 flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Se adapta
+              </h3>
+              <p class="text-green-700 text-sm">
+                Si la situación no está explícitamente cubierta en la
+                directiva, la IA toma decisiones razonables basándose en el
+                contexto.
+              </p>
+            </div>
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 class="font-bold text-green-800 mb-3 flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Es actualizable
+              </h3>
+              <p class="text-green-700 text-sm">
+                Cambiar el procedimiento es tan simple como editar el archivo
+                .md. No hace falta reprogramar nada.
+              </p>
+            </div>
+
+            <div class="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 class="font-bold text-green-800 mb-3 flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  />
+                </svg>
+                Es confiable
+              </h3>
+              <p class="text-green-700 text-sm">
+                Las acciones críticas (enviar emails, actualizar bases de
+                datos) las ejecuta código determinista. Cero alucinaciones.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-100 border-l-4 border-slate-500 p-6 rounded-r-lg"
+          >
+            <p class="text-slate-800">
+              <strong>Caso real:</strong> Una gestoría en Santander implementó
+              este framework para clasificación de documentos. Resultado:
+            </p>
+            <ul class="mt-3 space-y-1 text-slate-700">
+              <li>• Precisión del 97% en clasificación</li>
+              <li>• 100% fiabilidad en envío de emails de solicitud</li>
+              <li>
+                • Tiempo de procesamiento: de 10 minutos manuales a 30 segundos
+                automáticos
+              </li>
+              <li>
+                • Coste operativo: reducido en un 70% en tareas administrativas
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Section 5: Por Qué Funciona -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            Por Qué Este Enfoque Funciona
+          </h2>
+
+          <p class="mb-6">
+            El Framework DO soluciona el problema fundamental de los agentes
+            "todo en uno": separa la <strong>inteligencia</strong> (decisiones)
+            de la <strong>ejecución</strong> (acciones).
+          </p>
+
+          <div class="grid md:grid-cols-2 gap-8 mb-8">
+            <div>
+              <h3 class="text-xl font-bold text-red-600 mb-3">❌ Enfoque Malo</h3>
+              <div class="bg-red-50 p-4 rounded-lg">
+                <p class="text-sm text-red-800 mb-3">
+                  "Le pido a ChatGPT que clasifique la factura Y envíe el email
+                  de solicitud"
+                </p>
+                <p class="text-xs text-red-700">
+                  <strong>Problema:</strong> Si el LLM alucina en el paso de
+                  enviar el email, puede enviar el mensaje equivocado, al
+                  cliente equivocado, o simplemente fallar silenciosamente.
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-xl font-bold text-green-600 mb-3">
+                ✓ Enfoque Correcto
+              </h3>
+              <div class="bg-green-50 p-4 rounded-lg">
+                <p class="text-sm text-green-800 mb-3">
+                  "Le pido a Claude que <em>decida si</em> enviar el email, y
+                  luego <em>ejecuto</em> el script verificado de envío"
+                </p>
+                <p class="text-xs text-green-700">
+                  <strong>Ventaja:</strong> La IA solo decide (probabilístico).
+                  El código envía (determinístico). Combinas lo mejor de ambos
+                  mundos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-lg font-medium text-electric-600">
+            Esta arquitectura basada en microservicios garantiza que cada
+            componente haga lo que mejor sabe hacer.
+          </p>
+        </section>
+
+        <!-- Section 6: Cuándo Usar -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            Cuándo Usar el Framework DO
+          </h2>
+
+          <p class="mb-6">Este enfoque es ideal para:</p>
+
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start">
+              <svg
+                class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <div>
+                <p class="font-semibold text-navy-900">
+                  Procesos con reglas claras pero casos excepcionales
+                </p>
+                <p class="text-sm text-slate-600">
+                  Ejemplo: Clasificación de documentos, validación de datos,
+                  aprobaciones de solicitudes
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <svg
+                class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <div>
+                <p class="font-semibold text-navy-900">
+                  Tareas repetitivas que requieren juicio humano
+                </p>
+                <p class="text-sm text-slate-600">
+                  Ejemplo: Responder emails de clientes, priorizar solicitudes,
+                  generar reportes personalizados
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <svg
+                class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <div>
+                <p class="font-semibold text-navy-900">
+                  Workflows multi-paso con integraciones
+                </p>
+                <p class="text-sm text-slate-600">
+                  Ejemplo: Onboarding de clientes (crear cuenta → enviar email
+                  → agendar llamada → crear carpeta Drive)
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start">
+              <svg
+                class="w-6 h-6 text-green-500 mt-1 mr-3 flex-shrink-0"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              <div>
+                <p class="font-semibold text-navy-900">
+                  Procesos que cambian frecuentemente
+                </p>
+                <p class="text-sm text-slate-600">
+                  Ejemplo: Compliance fiscal (las reglas cambian, solo
+                  actualizas la directiva)
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="bg-orange-50 border-l-4 border-orange-500 p-6 rounded-r-lg"
+          >
+            <p class="text-orange-800">
+              <strong>Cuándo NO usarlo:</strong> Para tareas totalmente
+              determinísticas sin excepciones (usa código tradicional), o para
+              creatividad pura sin restricciones (usa LLMs sin estructura).
+            </p>
+          </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="mb-12">
+          <h2 class="text-3xl font-bold text-navy-900 mb-6">
+            Conclusión: Del Papel al Código en 4 Pasos
+          </h2>
+
+          <div
+            class="bg-electric-50 border border-electric-200 rounded-xl p-8"
+          >
+            <ol class="space-y-4">
+              <li class="flex items-start">
+                <span
+                  class="w-8 h-8 bg-electric-500 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold"
+                  >1</span
+                >
+                <div>
+                  <strong class="text-navy-900"
+                    >Extrae tu SOP actual</strong
+                  ><br />
+                  <span class="text-sm text-slate-600"
+                    >Aunque esté mal escrito o incompleto</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-8 h-8 bg-electric-500 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold"
+                  >2</span
+                >
+                <div>
+                  <strong class="text-navy-900"
+                    >Conviértelo a directiva .md</strong
+                  ><br />
+                  <span class="text-sm text-slate-600"
+                    >Estructura: Objetivo → Inputs → Proceso → Outputs →
+                    Excepciones</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-8 h-8 bg-electric-500 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold"
+                  >3</span
+                >
+                <div>
+                  <strong class="text-navy-900"
+                    >Deja que la IA orqueste</strong
+                  ><br />
+                  <span class="text-sm text-slate-600"
+                    >Lee la directiva y decide en tiempo real</span
+                  >
+                </div>
+              </li>
+              <li class="flex items-start">
+                <span
+                  class="w-8 h-8 bg-electric-500 text-white rounded-full flex items-center justify-center mr-4 flex-shrink-0 font-bold"
+                  >4</span
+                >
+                <div>
+                  <strong class="text-navy-900"
+                    >Escribe scripts de ejecución</strong
+                  ><br />
+                  <span class="text-sm text-slate-600"
+                    >Código determinista para acciones críticas</span
+                  >
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <p class="mt-8 text-lg">
+            El Framework DO no es magia. Es arquitectura de software sólida
+            aplicada a la automatización inteligente. Convierte procedimientos
+            pasivos en workflows agénticos activos, adaptables y confiables.
+          </p>
+
+          <p class="mt-4 text-lg">
+            Y lo mejor: <strong>no necesitas saber programar</strong>. La
+            directiva es lenguaje natural. La orquestación es automática. Solo
+            los scripts de ejecución requieren código (y podemos escribirlos
+            juntos).
+          </p>
+        </section>
+
+        <!-- CTA -->
+        <div class="bg-navy-900 text-white rounded-2xl p-8 text-center">
+          <h3 class="text-2xl font-bold mb-4">
+            ¿Quieres convertir tus SOPs en agentes?
+          </h3>
+          <p class="mb-6 text-slate-300">
+            Te ayudo a implementar el Framework DO en tu empresa. Primera
+            auditoría gratuita.
+          </p>
+          <a
+            href="/?contact=true"
+            class="inline-block bg-electric-500 hover:bg-electric-600 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
+          >
+            Solicitar Auditoría Gratuita
+          </a>
+        </div>
+
+        <!-- Related Articles -->
+        <div class="mt-16 pt-12 border-t border-slate-200">
+          <h3 class="text-2xl font-bold text-navy-900 mb-6">
+            Artículos Relacionados
+          </h3>
+          <div class="grid md:grid-cols-2 gap-6">
+            <a
+              href="/blog/arquitectura-3-capas-explicada.html"
+              class="group block bg-white border border-slate-200 rounded-xl p-6 hover:border-electric-400 transition-all"
+            >
+              <h4
+                class="font-bold text-navy-900 mb-2 group-hover:text-electric-600"
+              >
+                La arquitectura de 3 capas explicada
+              </h4>
+              <p class="text-sm text-slate-600">
+                Entiende la base arquitectónica detrás del Framework DO con la
+                analogía del restaurante.
+              </p>
+            </a>
+            <a
+              href="/blog/por-que-los-agentes-ia-fallan.html"
+              class="group block bg-white border border-slate-200 rounded-xl p-6 hover:border-electric-400 transition-all"
+            >
+              <h4
+                class="font-bold text-navy-900 mb-2 group-hover:text-electric-600"
+              >
+                Por qué los agentes de IA fallan
+              </h4>
+              <p class="text-sm text-slate-600">
+                El problema matemático de la probabilidad compuesta que el
+                Framework DO resuelve.
+              </p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 py-12">
+      <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+          <div class="flex items-center space-x-2 mb-4 md:mb-0">
+            <div class="p-2 bg-electric-600 rounded-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect width="16" height="16" x="4" y="4" rx="2" />
+                <rect width="6" height="6" x="9" y="9" rx="1" />
+                <path d="M15 2v2" />
+                <path d="M15 20v2" />
+                <path d="M2 15h2" />
+                <path d="M2 9h2" />
+                <path d="M20 15h2" />
+                <path d="M20 9h2" />
+                <path d="M9 2v2" />
+                <path d="M9 20v2" />
+              </svg>
+            </div>
+            <span class="font-bold text-white">miagentuca.es</span>
+          </div>
+          <p class="text-slate-400 text-sm">
+            &copy; 2026 Jorge González. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

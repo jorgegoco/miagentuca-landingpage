@@ -33,41 +33,93 @@
     />
     <meta property="og:locale" content="es_ES" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Geo-Tagging for Local SEO -->
+    <meta name="geo.region" content="ES-CB" />
+    <meta name="geo.placename" content="Santander" />
+    <meta name="geo.position" content="43.4623;-3.8099" />
+    <meta name="ICBM" content="43.4623, -3.8099" />
+
+    <!-- Blog CollectionPage JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Blog de Inteligencia Artificial Cantabria",
+        "description": "Articulos sobre Inteligencia Artificial en Cantabria y Santander. Guias practicas de automatizacion, agentes de IA y la arquitectura de 3 capas para pymes cantabras.",
+        "url": "https://miagentuca.es/blog/",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "Mi Agentuca",
+          "url": "https://miagentuca.es"
+        },
+        "mainEntity": {
+          "@type": "ItemList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "url": "https://miagentuca.es/blog/ayudas-digitalizacion-ia-cantabria-2026.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "url": "https://miagentuca.es/blog/del-papel-al-codigo-framework-do.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "url": "https://miagentuca.es/blog/inteligencia-artificial-cantabria-guia-2026.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 4,
+              "url": "https://miagentuca.es/blog/inteligencia-artificial-santander-pymes-2026.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 5,
+              "url": "https://miagentuca.es/blog/por-que-los-agentes-ia-fallan.html"
+            },
+            {
+              "@type": "ListItem",
+              "position": 6,
+              "url": "https://miagentuca.es/blog/arquitectura-3-capas-explicada.html"
+            }
+          ]
+        }
+      }
+    </script>
+
+    <!-- BreadcrumbList JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Inicio",
+            "item": "https://miagentuca.es/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://miagentuca.es/blog/"
+          }
+        ]
+      }
+    </script>
+
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="/css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Inter", "sans-serif"],
-            },
-            colors: {
-              navy: {
-                900: "#0a192f",
-                800: "#112240",
-                700: "#233554",
-              },
-              electric: {
-                400: "#38bdf8",
-                500: "#0ea5e9",
-                600: "#0284c7",
-              },
-            },
-          },
-        },
-      }
-    </script>
-    <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-    </style>
   </head>
   <body class="bg-slate-50 text-slate-900 antialiased">
     <!-- Header -->
@@ -110,6 +162,11 @@
               class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
               >Inicio</a
             >
+            <a
+              href="/servicios/"
+              class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors"
+              >Servicios</a
+            >
             <a href="/blog/" class="text-sm font-medium text-electric-400"
               >Blog</a
             >
@@ -147,6 +204,108 @@
 
         <!-- Articles Grid -->
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <!-- Article: Ayudas Digitalización (NEW) -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
+            <div class="p-8">
+              <div class="flex items-center gap-2 mb-4">
+                <span
+                  class="bg-amber-100 text-amber-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Ayudas</span
+                >
+                <span
+                  class="bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Cantabria</span
+                >
+              </div>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a href="/blog/ayudas-digitalizacion-ia-cantabria-2026.html"
+                  >Ayudas a la Digitalización e IA para Pymes en Cantabria
+                  (2026)</a
+                >
+              </h2>
+              <p class="text-slate-600 mb-4 leading-relaxed">
+                Kit Digital, Acelera Pyme, fondos europeos y SODERCAN: todas las
+                ayudas disponibles para implementar IA en tu empresa cántabra.
+              </p>
+              <div class="flex items-center justify-between">
+                <a
+                  href="/blog/ayudas-digitalizacion-ia-cantabria-2026.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <span class="text-sm text-slate-400">28 Ene 2026 | 8 min</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Article: Framework DO (NEW) -->
+          <article
+            class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
+          >
+            <div class="p-8">
+              <div class="flex items-center gap-2 mb-4">
+                <span
+                  class="bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Guía Técnica</span
+                >
+                <span
+                  class="bg-green-100 text-green-700 text-xs font-semibold px-3 py-1 rounded-full"
+                  >Framework DO</span
+                >
+              </div>
+              <h2
+                class="text-xl font-bold text-navy-900 mb-3 hover:text-electric-600 transition-colors"
+              >
+                <a href="/blog/del-papel-al-codigo-framework-do.html"
+                  >Del Papel al Código: Cómo Convertir tus SOPs en Agentes de IA</a
+                >
+              </h2>
+              <p class="text-slate-600 mb-4 leading-relaxed">
+                Guía práctica para transformar tus procedimientos operativos en workflows agénticos confiables usando el Framework DO (Directive-Orchestration-Execution).
+              </p>
+              <div class="flex items-center justify-between">
+                <a
+                  href="/blog/del-papel-al-codigo-framework-do.html"
+                  class="inline-flex items-center text-electric-600 font-medium hover:text-electric-500 transition-colors"
+                >
+                  Leer artículo
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="w-4 h-4 ml-2"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+                <span class="text-sm text-slate-400">27 Ene 2026 | 8 min</span>
+              </div>
+            </div>
+          </article>
+
           <!-- Article: IA Cantabria Guide (NEW - Pillar) -->
           <article
             class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 border border-slate-200"
