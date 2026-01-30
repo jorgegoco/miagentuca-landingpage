@@ -34,7 +34,10 @@ const layers = [
 
 const MethodologySection: React.FC = () => {
   return (
-    <section id="metodología" className="py-24 bg-white relative overflow-hidden">
+    <section
+      id="metodología"
+      className="py-24 bg-white relative overflow-hidden"
+    >
       {/* Background accents */}
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-electric-500/5 rounded-full blur-3xl pointer-events-none" />
       <div className="container mx-auto px-6 relative z-10">
@@ -47,8 +50,8 @@ const MethodologySection: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-bold text-navy-900 mb-6"
           >
-            Por qué mis agentes{" "}
-            <span className="text-electric-600">no fallan</span>
+            ¿Por qué mis agentes{" "}
+            <span className="text-electric-600">no fallan?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +60,8 @@ const MethodologySection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            La arquitectura de 3 capas basada en microservicios que separa las decisiones de las acciones
+            La arquitectura de 3 capas basada en microservicios que separa las
+            decisiones de las acciones
           </motion.p>
         </div>
 

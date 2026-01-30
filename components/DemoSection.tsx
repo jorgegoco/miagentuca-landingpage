@@ -273,8 +273,8 @@ const DemoSection: React.FC = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-slate-600 max-w-2xl mx-auto text-lg"
           >
-            Interactua con demos reales de agentes de inteligencia artificial usando la arquitectura de 3
-            capas basada en microservicios
+            Interactúa con demos reales de agentes de inteligencia artificial
+            usando la arquitectura de 3 capas basada en microservicios
           </motion.p>
         </div>
 
@@ -322,7 +322,7 @@ const DemoSection: React.FC = () => {
                     </h3>
                     <p className="text-slate-600">
                       Sube un PDF (factura, contrato, formulario fiscal) y el
-                      agente lo clasificara automaticamente.
+                      agente lo clasificará automáticamente.
                     </p>
                   </div>
 
@@ -434,8 +434,8 @@ const DemoSection: React.FC = () => {
                       Agente de Compras
                     </h3>
                     <p className="text-slate-600">
-                      Describe el producto que necesitas y el agente buscara y
-                      comparara proveedores.
+                      Describe el producto que necesitas y el agente buscará y
+                      comparará proveedores.
                     </p>
                   </div>
 
@@ -578,8 +578,8 @@ const DemoSection: React.FC = () => {
                       Generador de Arquitectura de Agentes
                     </h3>
                     <p className="text-slate-600">
-                      Describe un proceso de tu negocio y genera automaticamente
-                      la arquitectura del agente que lo automatizaria.
+                      Describe un proceso de tu negocio y genera automáticamente
+                      la arquitectura del agente que lo automatizaría.
                     </p>
                   </div>
 

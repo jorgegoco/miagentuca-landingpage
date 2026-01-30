@@ -10,27 +10,27 @@ interface FAQ {
 const faqs: FAQ[] = [
   {
     question:
-      "Cuál es la diferencia entre automatización clásica y workflows agénticos con IA?",
+      "¿Cuál es la diferencia entre automatización clásica y workflows agénticos con IA?",
     answer:
       "La automatización clásica sigue reglas fijas: 'si pasa X, haz Y'. Los workflows agénticos con inteligencia artificial entienden contexto y toman decisiones. Por ejemplo, un bot clásico reenvía todos los emails con 'urgente' en el asunto. Un agente de IA lee el email, evalúa si realmente es urgente, y decide la mejor respuesta según tu historial y preferencias.",
   },
   {
-    question: "Necesito cambiar mi software actual para usar agentes?",
+    question: "¿Necesito cambiar mi software actual para usar agentes?",
     answer:
       "No. Los agentes se integran con tus herramientas existentes: email, Google Sheets, tu CRM, sistemas de facturación... Trabajan como un empleado digital que usa las mismas aplicaciones que tu equipo. No hay migraciones ni cambios de plataforma.",
   },
   {
-    question: "Cuánto tiempo tarda implementar un agente?",
+    question: "¿Cuánto tiempo tarda implementar un agente?",
     answer:
       "Un agente típico está funcionando en 2-3 semanas. La primera semana definimos juntos el proceso y las reglas. La segunda desarrollamos e integramos. La tercera ajustamos y entrenamos. Tras éso, tienes soporte continuo para mejoras.",
   },
   {
-    question: "Qué pasa si el agente comete un error?",
+    question: "¿Qué pasa si el agente comete un error?",
     answer:
-      "Gracias a la arquitectura de 3 capas, los errores son raros y controlados. La IA decide, pero el código ejecuta. Además, configuro puntos de supervision donde tu equipo valida decisiones críticas antes de que se ejecuten. Tienes el control final siempre.",
+      "Gracias a la arquitectura de 3 capas, los errores son raros y controlados. La IA decide, pero el código ejecuta. Además, configuro puntos de supervisión donde tu equipo valida decisiones críticas antes de que se ejecuten. Tienes el control final siempre.",
   },
   {
-    question: "Mis datos están seguros? Quién tiene acceso?",
+    question: "¿Mis datos están seguros? ¿Quién tiene acceso?",
     answer:
       "Tu privacidad es prioritaria. Los agentes solo acceden a los datos necesarios para su tarea, con permisos mínimos. Todo el tráfico está encriptado y no comparto información con terceros. Puedes ver exactamente que datos procesa cada agente y revocar accesos en cualquier momento.",
   },

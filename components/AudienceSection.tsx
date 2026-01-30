@@ -31,7 +31,8 @@ const AudienceSection: React.FC = () => {
             </h2>
             <p className="text-slate-600 mb-8 text-lg">
               No necesitas cambiar todo tu software ni formar a tu equipo
-              durante meses. Mi metodología de automatización inteligente es quirúrgica y rápida.
+              durante meses. Mi metodología de automatización inteligente es
+              quirúrgica y rápida.
             </p>
 
             <div className="space-y-6">
