@@ -7,7 +7,7 @@
     "dev": "npm run css:build && vite",
     "build": "npm run css:build && vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist && bash scripts/indexnow-ping.sh",
     "css:build": "npx @tailwindcss/cli -i ./src/styles/tailwind.css -o ./public/css/styles.css --minify",
     "css:watch": "npx @tailwindcss/cli -i ./src/styles/tailwind.css -o ./public/css/styles.css --watch"
   },
