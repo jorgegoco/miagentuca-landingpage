@@ -162,7 +162,7 @@ const UseCasesSection: React.FC = () => {
         >
           <a
             href="/servicios/automatizacion-pymes-santander.html"
-            className="inline-flex items-center gap-2 text-electric-400 hover:text-electric-300 font-medium transition-colors group"
+            className="inline-flex items-center gap-2 text-electric-600 hover:text-electric-500 font-medium transition-colors group"
           >
             ¿Tienes un proceso que quieres automatizar?
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
