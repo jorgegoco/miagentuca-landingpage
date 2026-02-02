@@ -5,6 +5,7 @@ import ShiftSection from './components/ShiftSection';
 import MethodologySection from './components/MethodologySection';
 import AgentsSection from './components/AgentsSection';
 import DemoSection from './components/DemoSection';
+import UseCasesSection from './components/UseCasesSection';
 import AudienceSection from './components/AudienceSection';
 import FAQSection from './components/FAQSection';
 import AboutSection from './components/AboutSection';
@@ -35,6 +36,7 @@ function App() {
         <AgentsSection />
         <SectionDivider fromColor="navy" toColor="slate" variant="gradient" />
         <DemoSection />
+        <UseCasesSection />
         <AudienceSection />
         <FAQSection />
         <SectionDivider fromColor="slate" toColor="white" variant="gradient" />
