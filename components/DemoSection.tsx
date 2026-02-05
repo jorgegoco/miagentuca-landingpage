@@ -98,6 +98,7 @@ const DemoSection: React.FC = () => {
 
   // Gestoria state
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [isDragging, setIsDragging] = useState(false)
   const [gestoriaResult, setGestoriaResult] = useState<GestoriaResult | null>(
     null,
   )
@@ -276,18 +277,6 @@ const DemoSection: React.FC = () => {
             Interactúa con demos reales de agentes de inteligencia artificial
             usando la arquitectura de 3 capas basada en microservicios
           </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 mx-auto max-w-2xl px-4 py-3 bg-slate-100 rounded-lg flex items-start gap-3"
-          >
-            <AlertCircle className="w-5 h-5 text-electric-600 flex-shrink-0 mt-0.5" />
-            <p className="text-slate-600 text-sm leading-relaxed">
-              Estas demos están diseñadas como pruebas de concepto (PoC). Para garantizar la sostenibilidad del proyecto y permitir que todos los usuarios las prueben gratuitamente, los agentes realizan tareas simplificadas y generalistas.
-            </p>
-          </motion.div>
         </div>
 
         {/* Demo Card */}
@@ -338,26 +327,104 @@ const DemoSection: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Upload Area */}
+                  {/* Disclaimer */}
+                  <div className="mb-6 p-3 bg-slate-50 border border-slate-200 rounded-lg flex items-start gap-3">
+                    <AlertCircle className="w-5 h-5 text-electric-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-slate-600 text-sm leading-relaxed">
+                      Estas demos son pruebas de concepto simplificadas para garantizar la sostenibilidad del servicio. La arquitectura real permite procesar flujos de trabajo ilimitados y datos privados complejos.
+                    </p>
+                  </div>
+
+                  {/* Upload Area - Drag & Drop Zone */}
                   <div className="mb-6">
-                    <label className="block mb-2 text-sm font-medium text-slate-700">
-                      Documento PDF (max 2MB)
-                    </label>
-                    <div className="relative">
-                      <input
-                        type="file"
-                        accept=".pdf"
-                        onChange={(e) =>
-                          setSelectedFile(e.target.files?.[0] || null)
+                    <input
+                      type="file"
+                      id="pdf-upload"
+                      accept=".pdf,application/pdf"
+                      onChange={(e) => {
+                        const file = e.target.files?.[0]
+                        if (file && file.size > 2 * 1024 * 1024) {
+                          setError("El archivo excede 2MB. Por favor, selecciona un archivo más pequeño.")
+                          setSelectedFile(null)
+                        } else {
+                          setError(null)
+                          setSelectedFile(file || null)
                         }
-                        className="block w-full text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-electric-50 file:text-electric-700 hover:file:bg-electric-100 cursor-pointer border border-slate-300 rounded-lg"
-                      />
-                    </div>
+                      }}
+                      className="sr-only"
+                    />
+                    <label
+                      htmlFor="pdf-upload"
+                      onDragOver={(e) => {
+                        e.preventDefault()
+                        setIsDragging(true)
+                      }}
+                      onDragLeave={() => setIsDragging(false)}
+                      onDrop={(e) => {
+                        e.preventDefault()
+                        setIsDragging(false)
+                        const file = e.dataTransfer.files?.[0]
+                        if (file) {
+                          if (!file.type.includes("pdf")) {
+                            setError("Por favor, selecciona un archivo PDF.")
+                            setSelectedFile(null)
+                          } else if (file.size > 2 * 1024 * 1024) {
+                            setError("El archivo excede 2MB. Por favor, selecciona un archivo más pequeño.")
+                            setSelectedFile(null)
+                          } else {
+                            setError(null)
+                            setSelectedFile(file)
+                          }
+                        }
+                      }}
+                      className={`
+                        flex flex-col items-center justify-center gap-3
+                        w-full min-h-[120px] p-6
+                        border-2 border-dashed rounded-xl
+                        cursor-pointer transition-all duration-200
+                        ${isDragging
+                          ? "border-electric-500 bg-electric-50"
+                          : selectedFile
+                            ? "border-green-400 bg-green-50"
+                            : "border-slate-300 hover:border-electric-400 hover:bg-slate-50"
+                        }
+                      `}
+                    >
+                      {selectedFile ? (
+                        <>
+                          <CheckCircle className="w-10 h-10 text-green-500" />
+                          <div className="text-center">
+                            <p className="text-green-700 font-semibold break-all px-2">
+                              {selectedFile.name}
+                            </p>
+                            <p className="text-green-600 text-sm mt-1">
+                              Listo para clasificar
+                            </p>
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <Upload className={`w-10 h-10 ${isDragging ? "text-electric-500" : "text-slate-400"}`} />
+                          <div className="text-center">
+                            <p className="text-slate-700 font-medium">
+                              <span className="hidden sm:inline">Arrastra tu PDF aquí o </span>
+                              <span className="text-electric-600 underline">selecciona un archivo</span>
+                            </p>
+                            <p className="text-slate-500 text-sm mt-1">
+                              PDF hasta 2MB
+                            </p>
+                          </div>
+                        </>
+                      )}
+                    </label>
                     {selectedFile && (
-                      <p className="mt-2 text-sm text-green-600 flex items-center gap-1">
-                        <CheckCircle className="w-4 h-4" />
-                        {selectedFile.name} seleccionado
-                      </p>
+                      <button
+                        type="button"
+                        onClick={() => setSelectedFile(null)}
+                        className="mt-2 text-sm text-slate-500 hover:text-slate-700 underline"
+                      >
+                        Cambiar archivo
+                      </button>
                     )}
                   </div>
 
