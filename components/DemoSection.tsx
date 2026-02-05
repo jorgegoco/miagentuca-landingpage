@@ -276,6 +276,18 @@ const DemoSection: React.FC = () => {
             Interactúa con demos reales de agentes de inteligencia artificial
             usando la arquitectura de 3 capas basada en microservicios
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mt-6 mx-auto max-w-2xl px-4 py-3 bg-slate-100 rounded-lg flex items-start gap-3"
+          >
+            <AlertCircle className="w-5 h-5 text-electric-600 flex-shrink-0 mt-0.5" />
+            <p className="text-slate-600 text-sm leading-relaxed">
+              Estas demos están diseñadas como pruebas de concepto (PoC). Para garantizar la sostenibilidad del proyecto y permitir que todos los usuarios las prueben gratuitamente, los agentes realizan tareas simplificadas y generalistas.
+            </p>
+          </motion.div>
         </div>
 
         {/* Demo Card */}
