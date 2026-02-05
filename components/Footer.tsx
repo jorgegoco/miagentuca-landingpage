@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* About */}
           <div>
-            <h3 className="text-white font-bold text-lg mb-3">Jorge González</h3>
+            <h3 className="text-white font-bold text-lg mb-3">Mi Agentuca</h3>
             <p className="text-sm text-slate-500 mb-4">
               Consultoría de IA Agéntica en Santander, Cantabria.
             </p>
@@ -95,7 +95,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="pt-8 border-t border-navy-800 text-center text-xs text-slate-600">
-          &copy; {new Date().getFullYear()} Jorge González. Todos los derechos reservados. | Servicios en España.
+          &copy; {new Date().getFullYear()} Mi Agentuca. Todos los derechos reservados. | Servicios en España.
         </div>
       </div>
     </footer>

@@ -11,7 +11,7 @@ const AboutSection: React.FC = () => {
             {/* Placeholder for Jorge's image - using a stylized abstract tech representation if no image provided, or standard placeholder */}
             <img
               src="https://picsum.photos/400/400?grayscale"
-              alt="Jorge González"
+              alt="Mi Agentuca - Consultor IA"
               className="w-full h-full object-cover rounded-full border-4 border-white shadow-xl relative z-10"
             />
             <div className="absolute bottom-4 right-4 z-20 bg-white p-2 rounded-full shadow-md">
@@ -21,10 +21,10 @@ const AboutSection: React.FC = () => {
 
           <div className="text-center md:text-left">
             <h2 className="text-3xl font-bold text-navy-900 mb-2">
-              Jorge González
+              Sobre Mi Agentuca
             </h2>
             <p className="text-electric-600 font-semibold mb-6">
-              Consultor de Inteligencia Artificial y Desarrollador de Agentes en Santander
+              Consultoría de Inteligencia Artificial y Desarrollo de Agentes en Santander
             </p>
 
             <p className="text-slate-600 text-lg leading-relaxed mb-4">
@@ -63,7 +63,7 @@ const AboutSection: React.FC = () => {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-slate-700 border border-slate-200 rounded-lg font-medium hover:bg-slate-50 transition-colors"
               >
                 <Mail className="w-5 h-5" />
-                jorgegoco70@gmail.com
+                Contactar por email
               </a>
             </div>
           </div>
