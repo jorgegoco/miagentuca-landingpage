@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
             <Cpu className="w-5 h-5 text-white" />
           </div>
           <span className="font-bold text-xl tracking-tight text-white">
-            miagentuca.es
+            m<span className="text-electric-400 drop-shadow-[0_0_12px_rgba(56,189,248,1)]">ia</span>gentuca.es
           </span>
         </a>
 
