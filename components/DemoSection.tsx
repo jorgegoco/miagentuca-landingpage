@@ -13,6 +13,10 @@ import {
   X,
   ExternalLink,
   Lightbulb,
+  ChevronDown,
+  Brain,
+  Cog,
+  Zap,
 } from "lucide-react"
 
 // API Base URLs
@@ -23,6 +27,11 @@ const API_URLS = {
 }
 
 // Types
+interface PriceRange {
+  low: number
+  high: number
+}
+
 interface GestoriaResult {
   document_type: string
   extracted_data: Record<string, unknown>
@@ -38,6 +47,8 @@ interface Supplier {
   delivery_days?: number
   min_order?: number
   in_stock?: boolean
+  price_confidence?: "estimated" | "reference"
+  price_range?: PriceRange
 }
 
 interface ComprasResult {
@@ -56,6 +67,8 @@ interface ComprasResult {
     reasoning?: string
   }
   procurement_tips?: string[]
+  procurement_strategy?: string
+  estimated_as_of?: string
   error?: string | null
 }
 
@@ -111,6 +124,7 @@ const DemoSection: React.FC = () => {
   const [productQuantity, setProductQuantity] = useState(1)
   const [productUrgency, setProductUrgency] = useState("normal")
   const [comprasResult, setComprasResult] = useState<ComprasResult | null>(null)
+  const [isPipelineOpen, setIsPipelineOpen] = useState(false)
 
   // Explain state
   const [processDescription, setProcessDescription] = useState("")
@@ -524,6 +538,24 @@ const DemoSection: React.FC = () => {
                     </p>
                   </div>
 
+                  {/* Simulation Banner */}
+                  <div className="mb-6 p-4 bg-gradient-to-r from-cyan-50 to-blue-50 border border-cyan-200 rounded-xl">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 p-2 bg-cyan-100 rounded-lg">
+                        <Zap className="w-5 h-5 text-cyan-600" />
+                      </div>
+                      <div>
+                        <p className="text-cyan-800 font-medium text-sm mb-1">
+                          Simulación con datos estimados del mercado español
+                        </p>
+                        <p className="text-cyan-600 text-xs leading-relaxed">
+                          Esta demo muestra las capacidades de análisis y recomendación del agente.
+                          Un agente en producción conectaría con APIs reales de proveedores para obtener precios actualizados al momento.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Search Input */}
                   <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-slate-700">
@@ -595,10 +627,17 @@ const DemoSection: React.FC = () => {
                       animate={{ opacity: 1, y: 0 }}
                       className="mt-6 p-4 bg-cyan-50 border border-cyan-200 rounded-xl"
                     >
-                      <h4 className="font-semibold text-cyan-800 mb-4 flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5" />
-                        Proveedores Encontrados
-                      </h4>
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="font-semibold text-cyan-800 flex items-center gap-2">
+                          <CheckCircle className="w-5 h-5" />
+                          Proveedores Encontrados
+                        </h4>
+                        {comprasResult.estimated_as_of && (
+                          <span className="text-[11px] bg-slate-100 text-slate-500 px-2 py-1 rounded-full">
+                            Precios est. {comprasResult.estimated_as_of}
+                          </span>
+                        )}
+                      </div>
                       {comprasResult.product_parsed && (
                         <div className="mb-4 p-3 bg-cyan-100/50 rounded-lg">
                           <p className="text-sm text-cyan-800">
@@ -633,13 +672,22 @@ const DemoSection: React.FC = () => {
                                 )}
                               </div>
                               <div className="text-right">
-                                <p className="font-bold text-cyan-700">
-                                  {typeof supplier.total_price === "number"
-                                    ? `${supplier.total_price.toFixed(2)} EUR${supplier.unit ? `/${supplier.unit}` : ""}`
-                                    : typeof supplier.unit_price === "number"
-                                      ? `${supplier.unit_price.toFixed(2)} EUR/${supplier.unit || "ud"}`
-                                      : "Consultar"}
-                                </p>
+                                <div className="flex items-center justify-end gap-1.5">
+                                  <p className="font-bold text-cyan-700">
+                                    {supplier.price_range
+                                      ? `${supplier.price_range.low.toFixed(2)} - ${supplier.price_range.high.toFixed(2)} EUR${supplier.unit ? `/${supplier.unit}` : ""}`
+                                      : typeof supplier.total_price === "number"
+                                        ? `${supplier.total_price.toFixed(2)} EUR${supplier.unit ? `/${supplier.unit}` : ""}`
+                                        : typeof supplier.unit_price === "number"
+                                          ? `${supplier.unit_price.toFixed(2)} EUR/${supplier.unit || "ud"}`
+                                          : "Consultar"}
+                                  </p>
+                                  {supplier.price_confidence && (
+                                    <span className="text-[10px] bg-cyan-100 text-cyan-600 px-1.5 py-0.5 rounded font-medium">
+                                      {supplier.price_confidence === "estimated" ? "Est." : "Ref."}
+                                    </span>
+                                  )}
+                                </div>
                                 <p className="text-xs text-slate-500">
                                   {typeof supplier.delivery_days === "number"
                                     ? `${supplier.delivery_days} dias`
@@ -693,6 +741,23 @@ const DemoSection: React.FC = () => {
                           )}
                         </div>
                       )}
+                      {comprasResult.procurement_strategy && (
+                        <div className="mt-4 pt-4 border-t border-cyan-200">
+                          <div className="flex items-start gap-3">
+                            <div className="flex-shrink-0 p-2 bg-cyan-100 rounded-lg mt-0.5">
+                              <Brain className="w-4 h-4 text-cyan-600" />
+                            </div>
+                            <div>
+                              <p className="text-sm font-semibold text-cyan-800 mb-2">
+                                Estrategia de Compra Recomendada
+                              </p>
+                              <p className="text-sm text-cyan-700 leading-relaxed">
+                                {comprasResult.procurement_strategy}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
                       {comprasResult.procurement_tips && comprasResult.procurement_tips.length > 0 && (
                         <div className="mt-4 pt-4 border-t border-cyan-200">
                           <p className="text-sm font-semibold text-cyan-800 mb-2 flex items-center gap-1">
@@ -712,9 +777,85 @@ const DemoSection: React.FC = () => {
                     </motion.div>
                   )}
                   {comprasResult && (
-                    <p className="mt-3 text-[11px] text-slate-400 text-center">
-                      Precios orientativos generados por IA · No vinculantes · IVA no incluido
-                    </p>
+                    <>
+                      <p className="mt-3 text-[11px] text-slate-400 text-center">
+                        Precios orientativos generados por IA · No vinculantes · IVA no incluido
+                      </p>
+
+                      {/* Production Pipeline */}
+                      <div className="mt-6">
+                        <button
+                          onClick={() => setIsPipelineOpen(!isPipelineOpen)}
+                          className="w-full flex items-center justify-between p-4 bg-slate-50 hover:bg-slate-100 rounded-xl border border-slate-200 transition-colors"
+                        >
+                          <span className="text-sm font-medium text-slate-700">
+                            ¿Cómo funcionaría en producción?
+                          </span>
+                          <motion.div
+                            animate={{ rotate: isPipelineOpen ? 180 : 0 }}
+                            transition={{ duration: 0.3 }}
+                          >
+                            <ChevronDown className="w-5 h-5 text-slate-400" />
+                          </motion.div>
+                        </button>
+
+                        <AnimatePresence>
+                          {isPipelineOpen && (
+                            <motion.div
+                              initial={{ opacity: 0, height: 0 }}
+                              animate={{ opacity: 1, height: "auto" }}
+                              exit={{ opacity: 0, height: 0 }}
+                              transition={{ duration: 0.3 }}
+                              className="overflow-hidden"
+                            >
+                              <div className="pt-4 pb-2">
+                                <p className="text-xs text-slate-500 mb-4 text-center italic">
+                                  Esto es lo que construyo para tu negocio
+                                </p>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+                                  <div className="flex flex-col items-center p-4 bg-white rounded-xl border border-slate-200">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-3 shadow-sm">
+                                      <Search className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-cyan-600 mb-1">PASO 1</span>
+                                    <p className="text-xs font-medium text-slate-700 text-center">Consulta APIs reales</p>
+                                    <p className="text-[10px] text-slate-400 text-center mt-1">Lyreco, RAJA, Amazon Business...</p>
+                                  </div>
+
+                                  <div className="flex flex-col items-center p-4 bg-white rounded-xl border border-slate-200">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-3 shadow-sm">
+                                      <Brain className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-cyan-600 mb-1">PASO 2</span>
+                                    <p className="text-xs font-medium text-slate-700 text-center">Compara en tiempo real</p>
+                                    <p className="text-[10px] text-slate-400 text-center mt-1">IA orquesta la comparación</p>
+                                  </div>
+
+                                  <div className="flex flex-col items-center p-4 bg-white rounded-xl border border-slate-200">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-3 shadow-sm">
+                                      <Cog className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-cyan-600 mb-1">PASO 3</span>
+                                    <p className="text-xs font-medium text-slate-700 text-center">Aplica lógica de negocio</p>
+                                    <p className="text-[10px] text-slate-400 text-center mt-1">Reglas deterministas, sin errores</p>
+                                  </div>
+
+                                  <div className="flex flex-col items-center p-4 bg-white rounded-xl border border-slate-200">
+                                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-3 shadow-sm">
+                                      <Sparkles className="w-5 h-5 text-white" />
+                                    </div>
+                                    <span className="text-[10px] font-bold text-cyan-600 mb-1">PASO 4</span>
+                                    <p className="text-xs font-medium text-slate-700 text-center">Genera recomendación</p>
+                                    <p className="text-[10px] text-slate-400 text-center mt-1">Análisis personalizado</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    </>
                   )}
                 </motion.div>
               )}
