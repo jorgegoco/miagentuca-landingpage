@@ -12,6 +12,7 @@ import {
   AlertCircle,
   X,
   ExternalLink,
+  Lightbulb,
 } from "lucide-react"
 
 // API Base URLs
@@ -43,6 +44,7 @@ interface ComprasResult {
   success: boolean
   product_parsed?: {
     name: string
+    category?: string
     specifications: string
     quantity: number
   }
@@ -53,6 +55,7 @@ interface ComprasResult {
     best_value?: string
     reasoning?: string
   }
+  procurement_tips?: string[]
   error?: string | null
 }
 
@@ -105,6 +108,8 @@ const DemoSection: React.FC = () => {
 
   // Compras state
   const [productQuery, setProductQuery] = useState("")
+  const [productQuantity, setProductQuantity] = useState(1)
+  const [productUrgency, setProductUrgency] = useState("normal")
   const [comprasResult, setComprasResult] = useState<ComprasResult | null>(null)
 
   // Explain state
@@ -181,7 +186,8 @@ const DemoSection: React.FC = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           product: productQuery,
-          quantity: 1,
+          quantity: productQuantity,
+          urgency: productUrgency,
         }),
       })
 
@@ -519,7 +525,7 @@ const DemoSection: React.FC = () => {
                   </div>
 
                   {/* Search Input */}
-                  <div className="mb-6">
+                  <div className="mb-4">
                     <label className="block mb-2 text-sm font-medium text-slate-700">
                       Producto a buscar
                     </label>
@@ -530,6 +536,37 @@ const DemoSection: React.FC = () => {
                       placeholder="ej: folios A4, tornillos M6 inox, guantes de nitrilo..."
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-electric-500 focus:border-electric-500 outline-none transition-all"
                     />
+                  </div>
+
+                  {/* Quantity & Urgency */}
+                  <div className="mb-6 grid grid-cols-2 gap-4">
+                    <div>
+                      <label className="block mb-2 text-sm font-medium text-slate-700">
+                        Cantidad
+                      </label>
+                      <input
+                        type="number"
+                        min={1}
+                        max={10000}
+                        value={productQuantity}
+                        onChange={(e) => setProductQuantity(Number(e.target.value))}
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-electric-500 focus:border-electric-500 outline-none transition-all"
+                      />
+                    </div>
+                    <div>
+                      <label className="block mb-2 text-sm font-medium text-slate-700">
+                        Urgencia
+                      </label>
+                      <select
+                        value={productUrgency}
+                        onChange={(e) => setProductUrgency(e.target.value)}
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-electric-500 focus:border-electric-500 outline-none transition-all bg-white"
+                      >
+                        <option value="normal">Normal</option>
+                        <option value="urgent">Urgente</option>
+                        <option value="very_urgent">Muy urgente</option>
+                      </select>
+                    </div>
                   </div>
 
                   {/* Submit Button */}
@@ -562,6 +599,21 @@ const DemoSection: React.FC = () => {
                         <CheckCircle className="w-5 h-5" />
                         Proveedores Encontrados
                       </h4>
+                      {comprasResult.product_parsed && (
+                        <div className="mb-4 p-3 bg-cyan-100/50 rounded-lg">
+                          <p className="text-sm text-cyan-800">
+                            <strong>{comprasResult.product_parsed.name}</strong>
+                            {comprasResult.product_parsed.category && (
+                              <span className="ml-2 text-xs bg-cyan-200 text-cyan-700 px-2 py-0.5 rounded-full">
+                                {comprasResult.product_parsed.category}
+                              </span>
+                            )}
+                          </p>
+                          {comprasResult.product_parsed.specifications && (
+                            <p className="text-xs text-cyan-600 mt-1">{comprasResult.product_parsed.specifications}</p>
+                          )}
+                        </div>
+                      )}
                       <div className="space-y-3">
                         {comprasResult.suppliers &&
                         comprasResult.suppliers.length > 0 ? (
@@ -595,6 +647,9 @@ const DemoSection: React.FC = () => {
                                   {typeof supplier.shipping_cost === "number" &&
                                     supplier.shipping_cost > 0 &&
                                     ` (+${supplier.shipping_cost.toFixed(2)} envio)`}
+                                  {typeof supplier.min_order === "number" && supplier.min_order > 1 && (
+                                    <span className="text-xs text-slate-400 ml-1">· Min: {supplier.min_order} uds</span>
+                                  )}
                                 </p>
                               </div>
                             </div>
@@ -638,7 +693,28 @@ const DemoSection: React.FC = () => {
                           )}
                         </div>
                       )}
+                      {comprasResult.procurement_tips && comprasResult.procurement_tips.length > 0 && (
+                        <div className="mt-4 pt-4 border-t border-cyan-200">
+                          <p className="text-sm font-semibold text-cyan-800 mb-2 flex items-center gap-1">
+                            <Lightbulb className="w-4 h-4" />
+                            Consejos de compra
+                          </p>
+                          <ul className="space-y-1">
+                            {comprasResult.procurement_tips.map((tip, i) => (
+                              <li key={i} className="text-xs text-cyan-700 flex items-start gap-2">
+                                <span className="text-cyan-400 mt-0.5">&#8226;</span>
+                                <span>{tip}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </motion.div>
+                  )}
+                  {comprasResult && (
+                    <p className="mt-3 text-[11px] text-slate-400 text-center">
+                      Precios orientativos generados por IA · No vinculantes · IVA no incluido
+                    </p>
                   )}
                 </motion.div>
               )}
