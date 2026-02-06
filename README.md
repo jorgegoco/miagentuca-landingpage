@@ -42,8 +42,8 @@ The landing page includes interactive demos connecting to live APIs:
 | Demo | Description | API Docs |
 |------|-------------|----------|
 | **Gestoria** | Upload a PDF and get automatic document classification | [gestoria.miagentuca.es/docs](https://gestoria.miagentuca.es/docs) |
-| **Compras** | Search for products and compare suppliers | [compras.miagentuca.es/docs](https://compras.miagentuca.es/docs) |
-| **Explain** | Describe a process and generate agent architecture | [explain.miagentuca.es/docs](https://explain.miagentuca.es/docs) |
+| **Compras** | Search for products with quantity/urgency controls, compare suppliers with price ranges and confidence badges, get procurement strategy and tips | [compras.miagentuca.es/docs](https://compras.miagentuca.es/docs) |
+| **Explain** | Describe a business process and get a structured DOE architecture: process analysis, directive summary, layered steps, execution capabilities, edge cases, and implementation estimate | [explain.miagentuca.es/docs](https://explain.miagentuca.es/docs) |
 
 ## Technology Stack
 
