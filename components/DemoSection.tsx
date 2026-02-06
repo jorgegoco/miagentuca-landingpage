@@ -17,6 +17,8 @@ import {
   Brain,
   Cog,
   Zap,
+  Clock,
+  AlertTriangle,
 } from "lucide-react"
 
 // API Base URLs
@@ -72,10 +74,32 @@ interface ComprasResult {
   error?: string | null
 }
 
+interface DirectiveStep {
+  name: string
+  description: string
+  layer: "directive" | "orchestration" | "execution"
+}
+
+interface ExecutionCapability {
+  description: string
+  tool: string
+}
+
 interface ExplainResult {
-  directive: string
-  execution_code: string
-  flowchart: string
+  success: boolean
+  process_analysis?: {
+    goal: string
+    inputs: string[]
+    outputs: string[]
+    complexity: string
+  }
+  directive_summary?: string
+  steps?: DirectiveStep[]
+  execution_capabilities?: ExecutionCapability[]
+  edge_cases?: string[]
+  implementation_estimate?: string
+  implementation_notes?: string
+  error?: string | null
 }
 
 type DemoTab = "gestoria" | "compras" | "explain"
@@ -912,49 +936,194 @@ const DemoSection: React.FC = () => {
                     )}
                   </button>
 
-                  {/* Result */}
-                  {explainResult && (
+                  {/* Error State */}
+                  {explainResult && !explainResult.success && (
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="mt-6 p-4 bg-purple-50 border border-purple-200 rounded-xl"
+                      className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl"
                     >
-                      <h4 className="font-semibold text-purple-800 mb-4 flex items-center gap-2">
-                        <CheckCircle className="w-5 h-5" />
-                        Arquitectura Generada
-                      </h4>
-                      <div className="space-y-4">
-                        {explainResult.directive && (
-                          <details open>
-                            <summary className="cursor-pointer text-purple-700 font-medium mb-2">
-                              Directiva (SOP)
-                            </summary>
-                            <pre className="p-3 bg-white rounded-lg text-xs overflow-x-auto border border-purple-100 whitespace-pre-wrap">
-                              {explainResult.directive}
-                            </pre>
-                          </details>
-                        )}
-                        {explainResult.execution_code && (
-                          <details>
-                            <summary className="cursor-pointer text-purple-700 font-medium mb-2">
-                              Codigo de Ejecucion
-                            </summary>
-                            <pre className="p-3 bg-slate-900 text-green-400 rounded-lg text-xs overflow-x-auto">
-                              {explainResult.execution_code}
-                            </pre>
-                          </details>
-                        )}
-                        {explainResult.flowchart && (
-                          <details>
-                            <summary className="cursor-pointer text-purple-700 font-medium mb-2">
-                              Diagrama de Flujo (Mermaid)
-                            </summary>
-                            <pre className="p-3 bg-white rounded-lg text-xs overflow-x-auto border border-purple-100">
-                              {explainResult.flowchart}
-                            </pre>
-                          </details>
-                        )}
-                      </div>
+                      <p className="text-red-700 text-sm flex items-center gap-2">
+                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                        {explainResult.error || "Error al generar la arquitectura. Inténtalo de nuevo."}
+                      </p>
+                    </motion.div>
+                  )}
+
+                  {/* Success State */}
+                  {explainResult && explainResult.success && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="mt-6 space-y-4"
+                    >
+                      {/* Section 1: Process Analysis */}
+                      {explainResult.process_analysis && (
+                        <div className="p-4 bg-purple-50 border border-purple-200 rounded-xl">
+                          <h4 className="font-semibold text-purple-800 mb-3 flex items-center gap-2">
+                            <CheckCircle className="w-5 h-5" />
+                            Análisis del Proceso
+                          </h4>
+                          <p className="text-purple-900 font-medium mb-3">
+                            {explainResult.process_analysis.goal}
+                          </p>
+                          <div className="flex flex-wrap gap-4 text-sm">
+                            <div>
+                              <span className="text-purple-600 font-medium text-xs block mb-1">Entradas</span>
+                              <div className="flex flex-wrap gap-1">
+                                {explainResult.process_analysis.inputs.map((input, i) => (
+                                  <span key={i} className="bg-green-100 text-green-700 px-2 py-0.5 rounded-full text-xs">
+                                    {input}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="text-purple-600 font-medium text-xs block mb-1">Salidas</span>
+                              <div className="flex flex-wrap gap-1">
+                                {explainResult.process_analysis.outputs.map((output, i) => (
+                                  <span key={i} className="bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full text-xs">
+                                    {output}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                            <div>
+                              <span className="text-purple-600 font-medium text-xs block mb-1">Complejidad</span>
+                              <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${
+                                explainResult.process_analysis.complexity === "low"
+                                  ? "bg-green-100 text-green-700"
+                                  : explainResult.process_analysis.complexity === "medium"
+                                    ? "bg-yellow-100 text-yellow-700"
+                                    : "bg-red-100 text-red-700"
+                              }`}>
+                                {explainResult.process_analysis.complexity === "low" ? "Baja" : explainResult.process_analysis.complexity === "medium" ? "Media" : "Alta"}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Section 2: Directive Summary */}
+                      {explainResult.directive_summary && (
+                        <div className="p-4 bg-white border border-purple-100 rounded-xl">
+                          <p className="text-sm font-semibold text-purple-800 mb-2">
+                            Directiva del Agente
+                          </p>
+                          <p className="text-sm text-slate-700 leading-relaxed">
+                            {explainResult.directive_summary}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Section 3: Process Steps — DOE Pipeline */}
+                      {explainResult.steps && explainResult.steps.length > 0 && (
+                        <div className="p-4 bg-white border border-purple-100 rounded-xl">
+                          <p className="text-sm font-semibold text-purple-800 mb-3">
+                            Pasos del Proceso Automatizado
+                          </p>
+                          <div className="space-y-2">
+                            {explainResult.steps.map((step, i) => (
+                              <div
+                                key={i}
+                                className={`flex items-start gap-3 p-3 rounded-lg border-l-4 ${
+                                  step.layer === "directive"
+                                    ? "border-l-purple-500 bg-purple-50/50"
+                                    : step.layer === "orchestration"
+                                      ? "border-l-blue-500 bg-blue-50/50"
+                                      : "border-l-teal-500 bg-teal-50/50"
+                                }`}
+                              >
+                                <span className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${
+                                  step.layer === "directive"
+                                    ? "bg-purple-500"
+                                    : step.layer === "orchestration"
+                                      ? "bg-blue-500"
+                                      : "bg-teal-500"
+                                }`}>
+                                  {i + 1}
+                                </span>
+                                <div className="flex-1 min-w-0">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="text-sm font-medium text-slate-800">{step.name}</span>
+                                    <span className={`text-[10px] px-1.5 py-0.5 rounded font-medium ${
+                                      step.layer === "directive"
+                                        ? "bg-purple-200 text-purple-700"
+                                        : step.layer === "orchestration"
+                                          ? "bg-blue-200 text-blue-700"
+                                          : "bg-teal-200 text-teal-700"
+                                    }`}>
+                                      {step.layer === "directive" ? "Directiva" : step.layer === "orchestration" ? "Orquestación" : "Ejecución"}
+                                    </span>
+                                  </div>
+                                  <p className="text-xs text-slate-600">{step.description}</p>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Section 4: Execution Capabilities */}
+                      {explainResult.execution_capabilities && explainResult.execution_capabilities.length > 0 && (
+                        <div className="p-4 bg-white border border-purple-100 rounded-xl">
+                          <p className="text-sm font-semibold text-purple-800 mb-3 flex items-center gap-1">
+                            <Cog className="w-4 h-4" />
+                            Herramientas y APIs
+                          </p>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                            {explainResult.execution_capabilities.map((cap, i) => (
+                              <div key={i} className="flex items-start gap-2 p-2 bg-slate-50 rounded-lg">
+                                <span className="text-xs font-bold text-teal-600 bg-teal-100 px-2 py-0.5 rounded flex-shrink-0">
+                                  {cap.tool}
+                                </span>
+                                <span className="text-xs text-slate-600">{cap.description}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Section 5: Edge Cases */}
+                      {explainResult.edge_cases && explainResult.edge_cases.length > 0 && (
+                        <div className="p-4 bg-white border border-purple-100 rounded-xl">
+                          <p className="text-sm font-semibold text-purple-800 mb-2 flex items-center gap-1">
+                            <AlertTriangle className="w-4 h-4" />
+                            Casos Especiales
+                          </p>
+                          <ul className="space-y-1">
+                            {explainResult.edge_cases.map((ec, i) => (
+                              <li key={i} className="text-xs text-slate-600 flex items-start gap-2">
+                                <span className="text-amber-400 mt-0.5">&#8226;</span>
+                                <span>{ec}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Section 6: Implementation Estimate + CTA */}
+                      {(explainResult.implementation_estimate || explainResult.implementation_notes) && (
+                        <div className="p-4 bg-gradient-to-r from-purple-50 to-violet-50 border border-purple-200 rounded-xl">
+                          {explainResult.implementation_estimate && (
+                            <p className="text-sm text-purple-800 font-medium flex items-center gap-2 mb-1">
+                              <Clock className="w-4 h-4" />
+                              Estimación: {explainResult.implementation_estimate}
+                            </p>
+                          )}
+                          {explainResult.implementation_notes && (
+                            <p className="text-xs text-purple-600 leading-relaxed">
+                              {explainResult.implementation_notes}
+                            </p>
+                          )}
+                          <a
+                            href="#sobre-mi"
+                            className="inline-block mt-3 text-sm font-semibold text-purple-700 hover:text-purple-900 underline underline-offset-2 transition-colors"
+                          >
+                            ¿Te interesa automatizar este proceso? →
+                          </a>
+                        </div>
+                      )}
                     </motion.div>
                   )}
                 </motion.div>
