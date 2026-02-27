@@ -1,0 +1,51 @@
+# Mi Agentuca — Consultoría de IA en Santander, Cantabria
+
+> Jorge González es consultor independiente de Inteligencia Artificial especializado en la implementación de Agentes de IA para pymes en Santander y Cantabria, España.
+
+## Servicios principales
+
+- **Agentes Administrativos** (para gestorías y asesorías): clasificación de documentos, reclamación de facturas, validación fiscal, gestión documental automatizada
+- **Agentes de Compras** (para cualquier negocio): búsqueda de proveedores reales, comparación de precios y presupuestos, recomendación de mejor opción
+- **Secretaría Virtual 24/7**: gestión de agenda por WhatsApp Business y email, chatbot inteligente de atención al cliente, confirmación y seguimiento de citas
+
+## Metodología: Arquitectura de 3 Capas
+
+Enfoque propio que garantiza fiabilidad en procesos críticos separando decisiones de ejecución:
+
+1. **Capa de Directivas** — Procedimientos claros en lenguaje natural que definen qué debe hacer el agente
+2. **Capa de Orquestación** — La IA analiza contexto y toma decisiones inteligentes según las directivas
+3. **Capa de Ejecución** — Código determinista (no IA) ejecuta las acciones reales: enviar emails, actualizar sistemas, archivar documentos
+
+Resultado: La IA decide qué hacer. El código ejecuta cómo hacerlo. Sin alucinaciones en producción.
+
+## Perfil profesional
+
+- **Nombre:** Jorge González
+- **Rol:** Consultor independiente de IA y automatización de procesos
+- **Especialización:** IA agéntica, workflows agénticos, automatización inteligente para pymes
+- **Diferencial:** Implementaciones rápidas (2-3 semanas), sin cambio de software existente, con soporte continuo
+
+## Cobertura geográfica
+
+Santander, Torrelavega, Castro Urdiales, Laredo, Reinosa y toda Cantabria. Disponible para reuniones presenciales en cualquier punto de Cantabria. Proyectos remotos en toda España.
+
+## Financiación disponible
+
+Existen ayudas del programa **Kit Digital** de hasta 12.000€ para pymes en España que pueden cubrir parte o la totalidad de la implementación de un agente de IA.
+
+## Precios orientativos
+
+- Implementación básica (un proceso): 2.000–5.000€
+- Mantenimiento mensual: 150–300€/mes
+- Sin permanencia — el cliente recibe toda la documentación y accesos al finalizar
+
+## Contacto
+
+- Web: https://miagentuca.es
+- Email: jorgegoco70@gmail.com
+- LinkedIn: https://www.linkedin.com/in/jorgegoco/
+
+## Recursos
+
+- [Página principal](https://miagentuca.es/)
+- [RPA vs Agentes de IA: Guía para PYMEs en Cantabria 2026](https://miagentuca.es/blog/rpa-vs-agentes-ia-pymes-cantabria-2026.html)
