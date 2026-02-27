@@ -8,32 +8,23 @@ Professional website for AI consulting services focused on implementing intellig
 
 ## Overview
 
-Mi Agentuca is a hybrid website combining a React SPA (home page) with static HTML pages (blog and services). It showcases AI agent services for small and medium businesses, with interactive demos connecting to live AI agent APIs.
+Mi Agentuca is a React SPA landing page showcasing AI agent services for small and medium businesses, with interactive demos connecting to live AI agent APIs.
 
 ### Site Structure
-
-The site has 14 pages:
 
 **Home (React SPA)**
 - Landing page with hero, methodology, agent showcase, interactive demos, use cases, audience, FAQ, about, and contact modal
 
-**Services (Static HTML) — /servicios/**
-- Services index listing page
-- Inteligencia Artificial en Cantabria — AI consulting service page
-- Automatizacion para Pymes en Santander — Automation service page
-
 **Blog (Static HTML) — /blog/**
-- Blog index listing page
-- 8 articles covering AI guides, tools comparisons, automation tutorials, and local resources
+- RPA vs Agentes de IA: guía para pymes en Cantabria 2026
 
 ### Key Features
 
 - **3-Layer Methodology** — Explains the architecture that makes AI agents reliable (Directivas, Orquestacion, Ejecucion)
 - **Interactive Demos** — Live demos connecting to real AI agent APIs hosted on Contabo VPS
 - **Use Cases Section** — Realistic automation scenarios for local businesses
-- **Static Blog** — 8 SEO-optimized articles about AI, automation, and local resources
-- **Service Pages** — 2 dedicated service pages for different keyword clusters
-- **IndexNow Integration** — Automatic search engine notification on deploy
+- **Static Blog** — SEO-optimized articles about AI, automation, and local resources
+- **llm.txt** — AI crawler discoverability file for ChatGPT, Perplexity, and Claude
 
 ## Live Demos
 
@@ -104,24 +95,13 @@ miagentuca-landingpage/
 │   ├── Footer.tsx
 │   └── ContactModal.tsx
 ├── public/                    # Static assets + pages
-│   ├── blog/                  # Static blog articles (8 articles + index)
-│   │   ├── index.html
-│   │   ├── inteligencia-artificial-cantabria-guia-2026.html
-│   │   ├── inteligencia-artificial-santander-pymes-2026.html
-│   │   ├── top-herramientas-ia-pymes-espana-2026.html
-│   │   ├── como-automatizar-gestoria-ia-cantabria.html
-│   │   ├── ayudas-digitalizacion-ia-cantabria-2026.html
-│   │   ├── del-papel-al-codigo-framework-do.html
-│   │   ├── por-que-los-agentes-ia-fallan.html
-│   │   └── arquitectura-3-capas-explicada.html
-│   ├── servicios/             # Static service pages (2 pages + index)
-│   │   ├── index.html
-│   │   ├── inteligencia-artificial-cantabria.html
-│   │   └── automatizacion-pymes-santander.html
+│   ├── blog/                  # Static blog articles
+│   │   └── rpa-vs-agentes-ia-pymes-cantabria-2026.html
 │   ├── css/
 │   │   └── styles.css         # Compiled Tailwind CSS
 │   ├── robots.txt
-│   ├── sitemap.xml            # 14 URLs
+│   ├── sitemap.xml            # 2 URLs (home + blog article)
+│   ├── llm.txt                # AI crawler discoverability (llms.txt spec)
 │   ├── CNAME
 │   ├── favicon.svg
 │   └── .nojekyll
@@ -177,13 +157,12 @@ This builds, deploys via gh-pages, and runs IndexNow automatically.
 
 All pages include comprehensive SEO optimization:
 
-- **Schema.org JSON-LD** — ProfessionalService, Article, FAQPage, BreadcrumbList, ItemList, CollectionPage, WebSite, Place
+- **Schema.org JSON-LD** — ProfessionalService, Person, FAQPage, Article, WebSite, Place
 - **Open Graph + Twitter Card** meta tags
 - **Geo-tagging** — geo.region, geo.placename, geo.position, ICBM
-- **Breadcrumbs** — visible + schema markup on all static pages
-- **IndexNow** — instant Bing/Yandex notification on content updates
-- **Sitemap** — 14 URLs with priority and lastmod
-- **robots.txt** — configured for search engines and AI bots
+- **llm.txt** — AI crawler discoverability (llms.txt spec by Answer.AI)
+- **Sitemap** — 2 URLs with priority and lastmod
+- **robots.txt** — configured for search engines and AI bots (GPTBot, ClaudeBot, PerplexityBot)
 
 ## Contact Form
 
