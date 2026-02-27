@@ -101,28 +101,8 @@
       a { color: #2563eb; text-decoration: none; }
       a:hover { text-decoration: underline; }
 
-      /* Nav */
-      .nav {
-        background: #0f172a;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-      .nav-brand { color: #fff; font-weight: 700; font-size: 1.1rem; text-decoration: none; }
-      .nav-cta {
-        background: #3b82f6;
-        color: #fff;
-        padding: 8px 18px;
-        border-radius: 8px;
-        font-size: 0.875rem;
-        font-weight: 600;
-        text-decoration: none;
-      }
-      .nav-cta:hover { background: #2563eb; text-decoration: none; }
-
       /* Layout */
-      .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+      .article-container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
       .article-wrap { padding: 48px 0 80px; }
 
       /* Breadcrumb */
@@ -297,19 +277,55 @@
       }
       footer a { color: #94a3b8; }
     </style>
+    <!-- Tailwind CSS (compiled) -->
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <nav class="nav">
-      <a href="https://miagentuca.es/" class="nav-brand">Mi Agentuca</a>
-      <a href="https://miagentuca.es/#contacto" class="nav-cta">Consulta gratuita</a>
-    </nav>
+    <header class="bg-navy-900 py-6">
+      <div class="container mx-auto px-6">
+        <nav class="flex justify-between items-center">
+          <a href="/" class="flex items-center space-x-2 group">
+            <div class="p-2 bg-electric-600 rounded-lg group-hover:bg-electric-500 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="16" height="16" x="4" y="4" rx="2"/><rect width="6" height="6" x="9" y="9" rx="1"/><path d="M15 2v2"/><path d="M15 20v2"/><path d="M2 15h2"/><path d="M2 9h2"/><path d="M20 15h2"/><path d="M20 9h2"/><path d="M9 2v2"/><path d="M9 20v2"/>
+              </svg>
+            </div>
+            <span class="font-bold text-xl tracking-tight text-white">m<span class="text-electric-400 drop-shadow-[0_0_12px_rgba(56,189,248,1)]">ia</span>gentuca.es</span>
+          </a>
+          <!-- Desktop Menu -->
+          <div class="hidden md:flex items-center space-x-8">
+            <a href="/" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors">Inicio</a>
+            <a href="/servicios/" class="text-sm font-medium text-slate-300 hover:text-electric-400 transition-colors">Servicios</a>
+            <a href="/blog/" class="text-sm font-medium text-electric-400">Blog</a>
+            <a href="https://miagentuca.es/#contacto" class="bg-electric-600 text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-electric-500 transition-colors">Consulta gratuita</a>
+          </div>
+          <!-- Mobile Menu Toggle -->
+          <button id="mobile-menu-toggle" class="md:hidden text-electric-400 p-2" aria-label="Menú">
+            <svg id="menu-icon" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="close-icon" class="w-6 h-6 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 border-t border-navy-700">
+          <div class="flex flex-col space-y-4 pt-4">
+            <a href="/" class="text-slate-300 hover:text-white font-medium">Inicio</a>
+            <a href="/servicios/" class="text-slate-300 hover:text-white font-medium">Servicios</a>
+            <a href="/blog/" class="text-electric-400 font-medium">Blog</a>
+            <a href="https://miagentuca.es/#contacto" class="text-white font-semibold">Consulta gratuita</a>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <div class="article-wrap">
-      <div class="container">
+      <div class="article-container">
         <div class="breadcrumb">
           <a href="https://miagentuca.es/">Inicio</a>
           <span>›</span>
-          <a href="https://miagentuca.es/">Blog</a>
+          <a href="/blog/">Blog</a>
           <span>›</span>
           RPA vs Agentes de IA
         </div>
@@ -539,5 +555,16 @@
     <footer>
       <p>© 2026 Mi Agentuca · Consultoría de IA Agéntica en Santander, Cantabria · <a href="https://miagentuca.es/">Inicio</a></p>
     </footer>
+    <script>
+      const toggle = document.getElementById('mobile-menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const closeIcon = document.getElementById('close-icon');
+      toggle.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+      });
+    </script>
   </body>
 </html>
