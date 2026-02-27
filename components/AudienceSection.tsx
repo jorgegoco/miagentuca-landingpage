@@ -29,10 +29,13 @@ const AudienceSection: React.FC = () => {
               Empieza pequeño, <br />
               <span className="text-electric-600">escala rápido.</span>
             </h2>
-            <p className="text-slate-600 mb-8 text-lg">
+            <p className="text-slate-600 mb-4 text-lg">
               No necesitas cambiar todo tu software ni formar a tu equipo
               durante meses. Mi metodología de automatización inteligente es
               quirúrgica y rápida.
+            </p>
+            <p className="text-slate-500 mb-8 text-sm">
+              Existen ayudas del <strong className="text-navy-700">Kit Digital</strong> que pueden financiar parte o toda la implementación para pymes en Cantabria.
             </p>
 
             <div className="space-y-6">

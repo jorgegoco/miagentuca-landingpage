@@ -28,7 +28,7 @@ const agents = [
     subtitle: "Atención 24/7",
     icon: <Calendar className="w-8 h-8 text-white" />,
     description:
-      "Atiende peticiones por email/WhatsApp, consulta tu disponibilidad real, agenda reuniones y persigue confirmaciones. Tu secretaria virtual que nunca duerme.",
+      "Atiende peticiones de clientes por WhatsApp Business y email, funciona como chatbot inteligente y secretaría virtual, consulta tu disponibilidad real, agenda reuniones y persigue confirmaciones. Nunca duerme.",
     gradient: "from-indigo-500 to-purple-600",
     methodology:
       "Directivas claras + decisiones inteligentes + ejecución confiable",

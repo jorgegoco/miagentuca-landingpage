@@ -33,8 +33,7 @@ const AboutSection: React.FC = () => {
               <span className="text-navy-900 font-medium">
                 honestidad y resultados
               </span>
-              . Ayudo a empresas en Cantabria y toda España a implementar arquitectura de microservicios
-              con inteligencia artificial de forma práctica."
+              . Ayudo a empresas en Cantabria y toda España en su transformación digital: automatización de procesos, digitalización de operaciones e implementación de agentes de IA de forma práctica."
             </p>
 
             <p className="text-slate-500 text-sm mb-8">
@@ -45,7 +44,7 @@ const AboutSection: React.FC = () => {
               >
                 consultor local de IA en Cantabria
               </a>
-              , ofrezco reuniones presenciales en Santander y alrededores.
+              , ofrezco reuniones presenciales en Santander, Torrelavega y cualquier punto de la región.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

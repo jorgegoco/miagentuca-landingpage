@@ -34,6 +34,11 @@ const faqs: FAQ[] = [
     answer:
       "Tu privacidad es prioritaria. Los agentes solo acceden a los datos necesarios para su tarea, con permisos mínimos. Todo el tráfico está encriptado y no comparto información con terceros. Puedes ver exactamente que datos procesa cada agente y revocar accesos en cualquier momento.",
   },
+  {
+    question: "¿Hay ayudas o subvenciones para implementar IA en mi empresa?",
+    answer:
+      "Sí. El programa Kit Digital del Gobierno de España ofrece ayudas de hasta 12.000€ para pymes y autónomos destinadas a la digitalización, incluyendo automatización de procesos con inteligencia artificial. En Cantabria, muchas empresas están aprovechando estas subvenciones para cubrir el coste inicial de su primer agente de IA. Puedo orientarte sobre los requisitos y el proceso de solicitud en tu primera consulta gratuita.",
+  },
 ]
 
 const FAQSection: React.FC = () => {

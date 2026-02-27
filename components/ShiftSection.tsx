@@ -39,8 +39,11 @@ const ShiftSection: React.FC = () => {
               <Play className="w-8 h-8 opacity-20" />
             </div>
             <h3 className="text-xl font-bold text-slate-500 mb-4">
-              Antes (Automatización Clásica)
+              Antes (RPA y Automatización Clásica)
             </h3>
+            <p className="text-slate-600 leading-relaxed mb-3">
+              La RPA y los bots clásicos automatizan pasos fijos. Los agentes de IA entienden contexto.
+            </p>
             <p className="text-slate-600 leading-relaxed">
               "La IA te escribe el borrador del email,{" "}
               <strong className="text-slate-800">tú lo revisas</strong>,{" "}
