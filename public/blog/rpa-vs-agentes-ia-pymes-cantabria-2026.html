@@ -257,6 +257,10 @@
       }
       .cta-btn:hover { background: #2563eb; text-decoration: none; }
 
+      /* CTA box - override global h3/p colors for proper contrast on dark bg */
+      .cta-box h3 { color: #ffffff; margin-top: 0; }
+      .cta-box p { color: #cbd5e1; }
+
     </style>
     <!-- Tailwind CSS (compiled) -->
     <link rel="stylesheet" href="/css/styles.css" />
@@ -517,7 +521,7 @@
           Si tienes dudas sobre tu caso concreto, la forma más rápida de resolverlas es una auditoría de 30 minutos donde analizamos tu proceso y te digo sin rodeos qué herramienta necesitas y cuánto te costaría.
         </p>
 
-        <div class="bg-navy-900 rounded-2xl p-8 my-8 text-center">
+        <div class="cta-box bg-navy-900 rounded-2xl p-8 my-8 text-center">
           <h3 class="text-2xl font-bold text-white mt-0 mb-4">¿Qué necesita exactamente tu empresa?</h3>
           <p class="text-slate-300 mb-6">Auditoría gratuita de 30 minutos. Sin compromiso. Te digo si necesitas RPA, un agente de IA o ninguno de los dos.</p>
           <a href="/?contact=true" class="inline-block bg-electric-500 hover:bg-electric-600 text-white font-semibold px-8 py-3 rounded-xl transition-colors">Solicitar auditoría gratuita</a>
