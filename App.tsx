@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import VoiceDemoSection from './components/VoiceDemoSection';
 import ShiftSection from './components/ShiftSection';
 import MethodologySection from './components/MethodologySection';
 import AgentsSection from './components/AgentsSection';
@@ -29,6 +30,7 @@ function App() {
       <Navbar />
       <main>
         <Hero onOpenModal={() => setIsModalOpen(true)} />
+        <VoiceDemoSection onOpenModal={() => setIsModalOpen(true)} />
         <SectionDivider fromColor="navy" toColor="white" variant="wave" />
         <ShiftSection />
         <MethodologySection />

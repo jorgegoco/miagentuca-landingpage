@@ -58,16 +58,12 @@ const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             Funcionan <span className="text-electric-400">24/7</span>, no se cansan y no cometen errores.
           </p>
 
-          <div className="relative inline-block">
-            <div className="absolute -inset-1 bg-electric-500/20 blur-xl rounded-full"></div>
-            <p className="relative text-xl md:text-2xl font-medium text-slate-300 italic tracking-wide">
-              "No vendemos software,{" "}
-              <span className="text-electric-400 font-bold drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
-                vendemos tiempo
-              </span>
-              ."
-            </p>
-          </div>
+          <a
+            href="#voice-demo"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-electric-400/60 text-white font-semibold hover:bg-electric-500/10 hover:border-electric-400 transition-all"
+          >
+            🎙️ Pruébalo con tu voz
+          </a>
         </motion.div>
       </div>
 

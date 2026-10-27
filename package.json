@@ -12,6 +12,8 @@
     "css:watch": "npx @tailwindcss/cli -i ./src/styles/tailwind.css -o ./public/css/styles.css --watch"
   },
   "dependencies": {
+    "@vocalbridgeai/react": "^0.1.1",
+    "@vocalbridgeai/sdk": "^0.1.1",
     "framer-motion": "^12.23.25",
     "lucide-react": "^0.555.0",
     "react": "^19.2.1",
