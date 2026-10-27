@@ -13,7 +13,7 @@ Mi Agentuca is a React SPA landing page showcasing AI agent services for small a
 ### Site Structure
 
 **Home (React SPA)**
-- Landing page with hero, methodology, agent showcase, interactive demos, use cases, audience, FAQ, about, and contact modal
+- Landing page with hero, voice demo, methodology, agent showcase, interactive demos, use cases, audience, FAQ, about, and contact modal
 
 **Blog (Static HTML) — /blog/**
 - RPA vs Agentes de IA: guía para pymes en Cantabria 2026
@@ -21,6 +21,7 @@ Mi Agentuca is a React SPA landing page showcasing AI agent services for small a
 ### Key Features
 
 - **3-Layer Methodology** — Explains the architecture that makes AI agents reliable (Directivas, Orquestacion, Ejecucion)
+- **Voice Demo** — Talk to a voice agent in Spanish and watch it build an automation proposal on screen
 - **Interactive Demos** — Live demos connecting to real AI agent APIs hosted on Contabo VPS
 - **Use Cases Section** — Realistic automation scenarios for local businesses
 - **Static Blog** — SEO-optimized articles about AI, automation, and local resources
@@ -34,7 +35,7 @@ The landing page includes interactive demos connecting to live APIs:
 |------|-------------|----------|
 | **Gestoria** | Upload a PDF and get automatic document classification | [gestoria.miagentuca.es/docs](https://gestoria.miagentuca.es/docs) |
 | **Compras** | Search for products with quantity/urgency controls, compare suppliers with price ranges and confidence badges, get procurement strategy and tips | [compras.miagentuca.es/docs](https://compras.miagentuca.es/docs) |
-| **Explain** | Describe a business process and get a structured DOE architecture: process analysis, directive summary, layered steps, execution capabilities, edge cases, and implementation estimate | [explain.miagentuca.es/docs](https://explain.miagentuca.es/docs) |
+| **Habla con tu agente** (voice) | Describe a business problem out loud; a Vocal Bridge voice agent answers while a proposal card builds up on screen (Client Actions over the same WebRTC connection as the audio). Token endpoint configurable via `VITE_VOICE_API_URL` | [voice.miagentuca.es/health](https://voice.miagentuca.es/health) |
 
 ## Technology Stack
 
@@ -83,6 +84,13 @@ miagentuca-landingpage/
 ├── components/                # React components (home page)
 │   ├── Navbar.tsx
 │   ├── Hero.tsx
+│   ├── VoiceDemoSection.tsx   # "Habla con tu agente" section
+│   ├── voice/                 # Voice demo (Vocal Bridge)
+│   │   ├── VoiceProvider.tsx  # Provider + token fetch
+│   │   ├── MicButton.tsx
+│   │   ├── VoiceDemo.tsx      # Agent <-> page actions, 180 s cap
+│   │   ├── ProposalCard.tsx
+│   │   └── SectorChips.tsx
 │   ├── ShiftSection.tsx
 │   ├── MethodologySection.tsx
 │   ├── AgentsSection.tsx
