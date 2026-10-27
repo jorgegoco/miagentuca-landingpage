@@ -30,7 +30,7 @@ function App() {
       <Navbar />
       <main>
         <Hero onOpenModal={() => setIsModalOpen(true)} />
-        <VoiceDemoSection />
+        <VoiceDemoSection onOpenModal={() => setIsModalOpen(true)} />
         <SectionDivider fromColor="navy" toColor="white" variant="wave" />
         <ShiftSection />
         <MethodologySection />
